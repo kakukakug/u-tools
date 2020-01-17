@@ -31,6 +31,7 @@ class AddressTransformScreen extends React.Component {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
       });
       text = text.replace(/[‐―−－]/g,'-');
+      text = text.replace(/　/g, ' ');
 
       return text;
     });
