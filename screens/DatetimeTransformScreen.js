@@ -15,6 +15,7 @@ class DatetimeTransformScreen extends React.Component {
   }
 
   yearToEra = (m, y) => {
+    if (m == 'R' && y > 0 && y < 50) return  2018 + y; //　令和
     if (m == 'H' && y > 0 && y < 50) return 1988 + y; //　平成
     if (m == 'S' && y > 0 && y < 65) return 1925 + y; //　昭和
     if (m == 'T' && y > 0 && y < 16) return 1911 + y; //　大正
@@ -25,9 +26,10 @@ class DatetimeTransformScreen extends React.Component {
     let textArray = this.state.value.split('\n');
     let valueNo = textArray.length;
 
-    let re = /([HSTM])([0-9]+)年([0-9]+)月([0-9]+)日/;
+    let re = /([HSTMR])([0-9]+)年([0-9]+)月([0-9]+)日/;
     let transformArray = textArray.map(text => {
       let result = re.exec(text);
+      if(result == null ) return '';
       let y = this.yearToEra(result[1], Number(result[2]));
 
       return y + '/' + ('00' + result[3]).slice(-2) + '/' + ('00' + result[4]).slice(-2);
@@ -47,13 +49,16 @@ class DatetimeTransformScreen extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.form}>
-          <Text style={styles.formTitle}>日付を入力</Text>
+          <Text style={styles.pageTitle}>日付テキスト変換フォーム</Text>
+          <Text style={styles.formTitle}>日付を入力してください。</Text>
+          <Text style={styles.formSubTitle}></Text>
           <TextInput
             style={styles.textInput}
             multiline={true}
             numberOfLines={4}
             onChangeText={text => this.setState({ value: text })}
             value={this.state.value}
+            placeholder='改行で複数のデータを入力できます'
           />
           <View style={styles.formButton}>
             <Button title="変換" color="#6666d6" onPress={this.transform} />
@@ -63,10 +68,11 @@ class DatetimeTransformScreen extends React.Component {
             multiline={true}
             numberOfLines={4}
             value={this.state.transformed}
+            placeholder='変換結果が出力されます'
           />
           {this.state.result === true ? (
-            <Text style={styles.formNotice}>
-              {this.state.valueNo}行を{this.state.transformedNo}に変換しました。
+            <Text style={styles.noticeText}>
+              {this.state.valueNo}行を{this.state.transformedNo}行に変換しました。
             </Text>
           ) : null}
         </View>
@@ -78,15 +84,25 @@ class DatetimeTransformScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#ddd',
+  },
+  pageTitle: {
+    padding: 10,
+    fontSize:20,
   },
   form: {
-    backgroundColor: '#eff',
+    backgroundColor: '#fffffe',
     flex: 1,
     padding: 30,
     alignSelf: 'center',
   },
   formTitle: {
-    padding: 10,
+    paddingHorizontal:5,
+  },
+  formSubTitle: {
+    padding: 5,
+    fontSize:10,
+    color:'#666',
   },
   textInput: {
     padding: 10,
@@ -94,10 +110,11 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   formButton: {
-    margin: 10,
+    marginTop: 10,
+    marginBottom: 30,
     alignSelf: 'center',
   },
-  formNotice: {
+  noticeText: {
     margin: 10,
     alignSelf: 'center',
   },
