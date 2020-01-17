@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "u-tools",
-    "slug": "u-tools",
+    "name": "honmushi-u-tools",
+    "slug": "honmushi-u-tools",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
