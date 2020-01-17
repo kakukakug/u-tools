@@ -56,7 +56,7 @@ class DatetimeTransformScreen extends React.Component {
             value={this.state.value}
           />
           <View style={styles.formButton}>
-            <Button title="変換" color="#f194ff" onPress={this.transform} />
+            <Button title="変換" color="#6666d6" onPress={this.transform} />
           </View>
           <TextInput
             style={styles.textInput}
@@ -80,9 +80,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   form: {
-    backgroundColor: '#ffd',
+    backgroundColor: '#eff',
     flex: 1,
     padding: 30,
+    alignSelf: 'center',
   },
   formTitle: {
     padding: 10,
@@ -90,6 +91,7 @@ const styles = StyleSheet.create({
   textInput: {
     padding: 10,
     borderWidth: 1,
+    borderRadius: 4,
   },
   formButton: {
     margin: 10,
