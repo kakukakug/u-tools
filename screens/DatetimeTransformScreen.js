@@ -14,23 +14,28 @@ class DatetimeTransformScreen extends React.Component {
     };
   }
 
-  yearToEra = (m, y) => {
-    if (m == 'R' && y > 0 && y < 50) return  2018 + y; //　令和
-    if (m == 'H' && y > 0 && y < 50) return 1988 + y; //　平成
-    if (m == 'S' && y > 0 && y < 65) return 1925 + y; //　昭和
-    if (m == 'T' && y > 0 && y < 16) return 1911 + y; //　大正
-    if (m == 'M' && y > 0 && y < 46) return 1867 + y; //　明治
+  warekiToEra = (m, y) => {
+    if (y === '元') {
+      y = 1; 
+    } else {
+      y = Number(y)
+    }
+    if ((m == 'R'||m=='令和') && y > 0 && y < 50) return  2018 + y; //　令和
+    if ((m == 'H'||m=='平成') && y > 0 && y < 50) return 1988 + y; //　平成
+    if ((m == 'S'||m=='昭和') && y > 0 && y < 65) return 1925 + y; //　昭和
+    if ((m == 'T'||m=='大正') && y > 0 && y < 16) return 1911 + y; //　大正
+    if ((m == 'M'||m=='明治') && y > 0 && y < 46) return 1867 + y; //　明治
   };
 
   transform = () => {
     let textArray = this.state.value.split('\n');
     let valueNo = textArray.length;
 
-    let re = /([HSTMR])([0-9]+)年([0-9]+)月([0-9]+)日/;
+    let re = /([HSTMR]|平成|昭和|大正|明治|令和)([0-9元]+)年([0-9]+)月([0-9]+)日/;
     let transformArray = textArray.map(text => {
       let result = re.exec(text);
       if(result == null ) return '';
-      let y = this.yearToEra(result[1], Number(result[2]));
+      let y = this.warekiToEra(result[1], result[2]);
 
       return y + '/' + ('00' + result[3]).slice(-2) + '/' + ('00' + result[4]).slice(-2);
     });

@@ -14,7 +14,8 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Home: DatetimeTransformScreen,
+    Home: HomeScreen,
+    Date: DatetimeTransformScreen,
   },
   config
 );
