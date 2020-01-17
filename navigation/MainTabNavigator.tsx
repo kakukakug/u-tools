@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import DatetimeTransformScreen from '../screens/DatetimeTransformScreen';
+import CompanyNameTransformScreen from '../screens/CompanyNameTransformScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -16,6 +17,7 @@ const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
     Date: DatetimeTransformScreen,
+    Company: CompanyNameTransformScreen,
   },
   config
 );
