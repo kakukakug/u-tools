@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, TextInput, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
-class CompanyNameTransformScreen extends React.Component {
+class AddressTransformScreen extends React.Component {
   static navigationOptions = { header: null };
   constructor(props) {
     super(props);
@@ -14,26 +14,18 @@ class CompanyNameTransformScreen extends React.Component {
     };
   }
 
-
   transform = () => {
     let textArray = this.state.value.split('\n');
     let valueNo = textArray.length;
 
     let transformArray = textArray.map(text => {
       if (text == '') return '';
-      text = text.replace(/(.*)[\(（]株[\)）](.*)/, '$1株式会社$2');
-      text = text.replace('㈱', '株式会社');
-
-      text = text.replace(/(.*)[\(（]有[\)）](.*)/, '$1有限会社$2');
-      text = text.replace('㈲', '有限会社');
-
-      text = text.replace(/(.*)[\(（][合同][\)）](.*)/, '$1合同会社$2');
-      text = text.replace(/(.*)[\(（]資[\)）](.*)/, '$1合資会社$2');
 
       text = text.replace(/[Ａ-Ｚａ-ｚ０-９]/g, s => {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
       });
-      text = text.replace(/　/g, ' ');
+      text = text.replace('‐','-');
+
       return text;
     });
     let transformedNo = transformArray.length;
@@ -51,8 +43,8 @@ class CompanyNameTransformScreen extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.form}>
-          <Text style={styles.pageTitle}>会社名変換フォーム</Text>
-          <Text style={styles.formTitle}>会社名を入力してください。</Text>
+          <Text style={styles.pageTitle}>住所変換フォーム</Text>
+          <Text style={styles.formTitle}>住所を入力してください。</Text>
           <Text style={styles.formSubTitle}></Text>
           <TextInput
             style={styles.textInput}
@@ -122,4 +114,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CompanyNameTransformScreen;
+export default AddressTransformScreen;
+
