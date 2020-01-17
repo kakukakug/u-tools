@@ -11,15 +11,21 @@ class AddressTransformScreen extends React.Component {
       valueNo: 0,
       transformedNo: 0,
       result: false,
+      errorMessage: '',
     };
   }
 
   transform = () => {
+    let error = '';
+    let errorMessage = '';
     let textArray = this.state.value.split('\n');
     let valueNo = textArray.length;
 
-    let transformArray = textArray.map(text => {
-      if (text == '') return '';
+    let transformArray = textArray.map((text,index) => {
+      if(text=== '' ) {
+        error = error + (index+1) + ','
+        return '';
+      }
 
       text = text.replace(/[Ａ-Ｚａ-ｚ０-９]/g, s => {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
@@ -31,11 +37,18 @@ class AddressTransformScreen extends React.Component {
     let transformedNo = transformArray.length;
     let transformText = transformArray.join('\n');
 
+    if(error != ''){
+      errorMessage = error + '行が変換出来なかった可能性が有ります。'
+    }else{
+      errorMessage = ''
+    }
+
     this.setState({
       transformed: transformText,
       valueNo: valueNo,
       transformedNo: transformedNo,
       result: true,
+      errorMessage: errorMessage,
     });
   };
 
@@ -67,6 +80,7 @@ class AddressTransformScreen extends React.Component {
           {this.state.result === true ? (
             <Text style={styles.noticeText}>
               {this.state.valueNo}行を{this.state.transformedNo}行に変換しました。
+              {this.state.errorMessage}
             </Text>
           ) : null}
         </View>
@@ -111,6 +125,7 @@ const styles = StyleSheet.create({
   noticeText: {
     margin: 10,
     alignSelf: 'center',
+    width:200,
   },
 });
 
