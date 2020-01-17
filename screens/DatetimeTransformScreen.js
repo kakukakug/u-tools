@@ -14,7 +14,7 @@ class DatetimeTransformScreen extends React.Component {
     };
   }
 
-  yearToEra = (m: string, y: number) => {
+  yearToEra = (m, y) => {
     if (m == 'H' && y > 0 && y < 50) return 1988 + y; //　平成
     if (m == 'S' && y > 0 && y < 65) return 1925 + y; //　昭和
     if (m == 'T' && y > 0 && y < 16) return 1911 + y; //　大正
