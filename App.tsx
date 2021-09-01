@@ -1,21 +1,30 @@
 import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import AppLoading from "expo-app-loading";
-import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 
 import { AppNavigator } from "./src/04_external/navigation/AppNavigator";
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+});
+
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
 
+  function handleFinishLoading() {
+    setLoadingComplete(true);
+  }
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading
         startAsync={loadResourcesAsync}
         onError={handleLoadingError}
-        onFinish={() => handleFinishLoading(setLoadingComplete)}
+        onFinish={handleFinishLoading}
       />
     );
   } else {
@@ -30,10 +39,6 @@ export default function App(props) {
 
 async function loadResourcesAsync() {
   await Promise.all([
-    Asset.loadAsync([
-      require("./src/04_external/assets/images/robot-dev.png"),
-      require("./src/04_external/assets/images/robot-prod.png"),
-    ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar
       ...Ionicons.font,
@@ -50,13 +55,3 @@ function handleLoadingError(error) {
   console.warn(error);
 }
 
-function handleFinishLoading(setLoadingComplete) {
-  setLoadingComplete(true);
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
-});

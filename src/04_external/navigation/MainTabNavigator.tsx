@@ -1,12 +1,15 @@
-import React from 'react';
+import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import TabBarIcon from '../components/01_atoms/TabBarIcon';
-import HomeScreen from '../components/05_pages/HomeScreen';
-import DatetimeTransformScreen from '../components/05_pages/DatetimeTransformScreen';
-import CompanyNameTransformScreen from '../components/05_pages/CompanyNameTransformScreen';
-import AddressTransformScreen from '../components/05_pages/AddressTransformScreen';
+import TabBarIcon from "../components/01_atoms/TabBarIcon";
+import { HomeScreen } from "../components/05_pages/HomeScreen";
+import { IconsScreen } from "../components/05_pages/IconsScreen";
+import DatetimeTransformScreen from "../components/05_pages/DatetimeTransformScreen";
+import CompanyNameTransformScreen from "../components/05_pages/CompanyNameTransformScreen";
+import AddressTransformScreen from "../components/05_pages/AddressTransformScreen";
+
+import { Colors } from "../styles/Colors";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +21,11 @@ function HomeStack() {
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} options={headerOption} />
       <Stack.Screen
+        name="Icons"
+        component={IconsScreen}
+        options={headerOption}
+      />
+      <Stack.Screen
         name="Date"
         component={DatetimeTransformScreen}
         options={headerOption}
@@ -27,7 +35,11 @@ function HomeStack() {
         component={CompanyNameTransformScreen}
         options={headerOption}
       />
-      <Stack.Screen name="Address" component={AddressTransformScreen} options={headerOption} />
+      <Stack.Screen
+        name="Address"
+        component={AddressTransformScreen}
+        options={headerOption}
+      />
     </Stack.Navigator>
   );
 }
@@ -36,8 +48,8 @@ const Tab = createBottomTabNavigator();
 
 export function TabNavigator() {
   const tabBarOptions = {
-    inactiveBackgroundColor: "#ffffff",
-    style: { backgroundColor: "#ffffff" },
+    inactiveBackgroundColor: Colors.background,
+    style: { backgroundColor: Colors.background },
   };
   const homeTabBarIcon = (props: { focused: boolean }) => {
     const { focused } = props;
@@ -49,10 +61,12 @@ export function TabNavigator() {
       <Tab.Screen
         name="Home"
         component={HomeStack}
-        options={{ tabBarLabel: "Home", tabBarIcon: homeTabBarIcon }}
+        options={{
+          headerShown: false,
+          tabBarLabel: "Home",
+          tabBarIcon: homeTabBarIcon,
+        }}
       />
     </Tab.Navigator>
   );
 }
-
-
