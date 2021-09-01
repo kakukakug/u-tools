@@ -3,11 +3,11 @@ import { Platform } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import DatetimeTransformScreen from '../screens/DatetimeTransformScreen';
-import CompanyNameTransformScreen from '../screens/CompanyNameTransformScreen';
-import AddressTransformScreen from '../screens/AddressTransformScreen';
+import TabBarIcon from '../components/01_atoms/TabBarIcon';
+import HomeScreen from '../components/05_pages/HomeScreen';
+import DatetimeTransformScreen from '../components/05_pages/DatetimeTransformScreen';
+import CompanyNameTransformScreen from '../components/05_pages/CompanyNameTransformScreen';
+import AddressTransformScreen from '../components/05_pages/AddressTransformScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
