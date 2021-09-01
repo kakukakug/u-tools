@@ -1,7 +1,6 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import TabBarIcon from '../components/01_atoms/TabBarIcon';
 import HomeScreen from '../components/05_pages/HomeScreen';
@@ -9,41 +8,51 @@ import DatetimeTransformScreen from '../components/05_pages/DatetimeTransformScr
 import CompanyNameTransformScreen from '../components/05_pages/CompanyNameTransformScreen';
 import AddressTransformScreen from '../components/05_pages/AddressTransformScreen';
 
-const config = Platform.select({
-  web: { headerMode: 'screen' },
-  default: {},
-});
+const Stack = createStackNavigator();
 
-const HomeStack = createStackNavigator(
-  {
-    Home: HomeScreen,
-    Date: DatetimeTransformScreen,
-    Company: CompanyNameTransformScreen,
-    Address: AddressTransformScreen,
-  },
-  config
-);
+function HomeStack() {
+  const headerOption = {
+    headerShown: false,
+  };
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} options={headerOption} />
+      <Stack.Screen
+        name="Date"
+        component={DatetimeTransformScreen}
+        options={headerOption}
+      />
+      <Stack.Screen
+        name="Company"
+        component={CompanyNameTransformScreen}
+        options={headerOption}
+      />
+      <Stack.Screen name="Address" component={AddressTransformScreen} options={headerOption} />
+    </Stack.Navigator>
+  );
+}
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
-};
+const Tab = createBottomTabNavigator();
 
-HomeStack.path = '';
+export function TabNavigator() {
+  const tabBarOptions = {
+    inactiveBackgroundColor: "#ffffff",
+    style: { backgroundColor: "#ffffff" },
+  };
+  const homeTabBarIcon = (props: { focused: boolean }) => {
+    const { focused } = props;
+    return <TabBarIcon focused={focused} name="home-outline" />;
+  };
 
-const tabNavigator = createBottomTabNavigator({
-  HomeStack,
-});
+  return (
+    <Tab.Navigator initialRouteName="Home" tabBarOptions={tabBarOptions}>
+      <Tab.Screen
+        name="Home"
+        component={HomeStack}
+        options={{ tabBarLabel: "Home", tabBarIcon: homeTabBarIcon }}
+      />
+    </Tab.Navigator>
+  );
+}
 
-tabNavigator.path = '';
 
-export default tabNavigator;

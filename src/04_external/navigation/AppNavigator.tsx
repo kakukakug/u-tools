@@ -1,12 +1,44 @@
-import React from 'react';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import React, { useRef, useCallback } from "react";
+import {
+  NavigationContainer,
+  NavigationContainerRef,
+} from "@react-navigation/native";
 
-import MainTabNavigator from './MainTabNavigator';
+import { TabNavigator } from "./MainTabNavigator";
 
-export default createAppContainer(
-  createSwitchNavigator({
-    // You could add another route here for authentication.
-    // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-    Main: MainTabNavigator,
-  })
-);
+export const AppNavigator = () => {
+  // https://reactnavigation.org/docs/screen-tracking
+  const routeNameRef = useRef<string | undefined>();
+  const navigationRef = useRef<NavigationContainerRef>(null);
+  const onReady = useCallback(() => {
+    routeNameRef.current = navigationRef.current?.getCurrentRoute()?.name;
+    //    setCurrentScreen("Home");
+  }, []);
+
+  /*
+  if (__DEV__) {
+    // console.log("debug mode on");
+    setDebugModeEnabled(true);
+  }
+
+  const onStateChange = useCallback(async () => {
+    const previousRouteName = routeNameRef.current;
+    const currentRouteName = navigationRef.current?.getCurrentRoute()?.name;
+
+    if (currentRouteName && previousRouteName !== currentRouteName) {
+      await setCurrentScreen(currentRouteName);
+    }
+
+    routeNameRef.current = currentRouteName;
+    }, []);
+   */
+
+  return (
+    <NavigationContainer
+      ref={navigationRef}
+      independent={true}
+      onReady={onReady}>
+      <TabNavigator />
+    </NavigationContainer>
+  );
+};

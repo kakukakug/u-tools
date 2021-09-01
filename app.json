@@ -3,13 +3,8 @@
     "name": "honmushi-u-tools",
     "slug": "honmushi-u-tools",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
+    "platforms": ["web"],
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./src/04_external/assets/images/icon.png",
     "splash": {
@@ -20,9 +15,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     }
