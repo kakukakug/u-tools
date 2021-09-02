@@ -8,6 +8,7 @@ import {
   FlatList,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import * as Clipboard from "expo-clipboard";
 
 import {
   AntDesign,
@@ -46,14 +47,16 @@ export const IconsScreen = () => {
       setIcons(tempIcons);
       return;
     }
-    const re = new RegExp(`.*${searchText}.*`, 'g');
+    const re = new RegExp(`.*${searchText}.*`, "g");
     const filterdIcons = tempIcons.filter((icon) => {
       return re.test(icon);
     });
     setIcons(filterdIcons);
   }, [family, searchText]);
 
-  const onPressIcon = (props) => {};
+  const onPressIcon = (props) => {
+    Clipboard.setString(props);
+  };
 
   const emptyComponent = () => {
     return (
@@ -332,7 +335,7 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
   iconList: {
-    width:760,
+    width: 760,
     backgroundColor: Colors.surface,
   },
   search: {
@@ -365,11 +368,11 @@ const styles = StyleSheet.create({
   },
   emptyComponent: {
     margin: 40,
-    padding:20,
+    padding: 20,
     backgroundColor: Colors.white,
   },
   emptyText: {
-    fontSize:30,
+    fontSize: 30,
     color: Colors.text,
   },
 });
