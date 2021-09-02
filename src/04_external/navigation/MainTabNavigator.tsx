@@ -20,12 +20,12 @@ function HomeStack() {
   };
   return (
     <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} options={headerOption} />
       <Stack.Screen
         name="Icons"
         component={IconsScreen}
       />
-      <Stack.Screen name="Home" component={HomeScreen} options={headerOption} />
-      <Stack.Screen name="FlexPreview" component={FlexPreviewScreen} options={headerOption} />
+      <Stack.Screen name="FlexPreview" component={FlexPreviewScreen} />
       <Stack.Screen
         name="Date"
         component={DatetimeTransformScreen}

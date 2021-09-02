@@ -27,7 +27,7 @@ export const HomeScreen = () => {
         <View style={styles.menuContainer}>
           <TouchableOpacity onPress={goIcons} style={styles.linkButton}>
             <Text style={styles.buttonText}>
-              React Native Vector Icons の アイコンプレビュー
+              @expo/vector-icons preview
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={goFlexPreview} style={styles.linkButton}>

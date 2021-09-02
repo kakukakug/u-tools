@@ -7,7 +7,6 @@ import {
   TextInput,
   FlatList,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import * as Clipboard from "expo-clipboard";
 
 import {
@@ -30,16 +29,12 @@ import { Colors } from "../../../styles/Colors";
 
 import { Icons, IconFamiliesName } from "../../../common/iconsConst";
 
-const IconFamilies = {
-  Octicons: require("@expo/vector-icons/build/vendor/react-native-vector-icons/glyphmaps/Octicons.json"),
-};
-
 export const IconsScreen = () => {
   const [family, setFamily] = useState("AntDesign");
   const [searchText, setSearchText] = useState("");
   const [icons, setIcons] = useState(Icons.AntDesign);
 
-  const presetIcons = useEffect(() => {
+  useEffect(() => {
     const tempIcons = Icons[family];
 
     console.log(searchText);
