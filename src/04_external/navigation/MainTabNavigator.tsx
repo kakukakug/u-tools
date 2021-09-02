@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TabBarIcon from "../components/01_atoms/TabBarIcon";
 import { HomeScreen } from "../components/05_pages/HomeScreen";
 import { IconsScreen } from "../components/05_pages/IconsScreen";
+import { FlexPreviewScreen} from "../components/05_pages/FlexPreviewScreen";
 import DatetimeTransformScreen from "../components/05_pages/DatetimeTransformScreen";
 import CompanyNameTransformScreen from "../components/05_pages/CompanyNameTransformScreen";
 import AddressTransformScreen from "../components/05_pages/AddressTransformScreen";
@@ -19,12 +20,12 @@ function HomeStack() {
   };
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} options={headerOption} />
       <Stack.Screen
         name="Icons"
         component={IconsScreen}
-        options={headerOption}
       />
+      <Stack.Screen name="Home" component={HomeScreen} options={headerOption} />
+      <Stack.Screen name="FlexPreview" component={FlexPreviewScreen} options={headerOption} />
       <Stack.Screen
         name="Date"
         component={DatetimeTransformScreen}

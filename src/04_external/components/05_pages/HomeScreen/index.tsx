@@ -8,11 +8,14 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { Colors } from "../../styles/Colors";
+import { Colors } from "../../../styles/Colors";
 
 export const HomeScreen = () => {
   const navigation = useNavigation();
 
+  const goFlexPreview = () => {
+    navigation.navigate("FlexPreview");
+  };
   const goIcons = () => {
     navigation.navigate("Icons");
   };
@@ -25,6 +28,11 @@ export const HomeScreen = () => {
           <TouchableOpacity onPress={goIcons} style={styles.linkButton}>
             <Text style={styles.buttonText}>
               React Native Vector Icons の アイコンプレビュー
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={goFlexPreview} style={styles.linkButton}>
+            <Text style={styles.buttonText}>
+             React Native Flex Box Style Creator 
             </Text>
           </TouchableOpacity>
         </View>
