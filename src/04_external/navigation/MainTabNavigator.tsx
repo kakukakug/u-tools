@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TabBarIcon from "../components/01_atoms/TabBarIcon";
 import { HomeScreen } from "../components/05_pages/HomeScreen";
 import { IconsScreen } from "../components/05_pages/IconsScreen";
-import { FlexPreviewScreen} from "../components/05_pages/FlexPreviewScreen";
+import { FlexPreviewScreen } from "../components/05_pages/FlexPreviewScreen";
 import DatetimeTransformScreen from "../components/05_pages/DatetimeTransformScreen";
 import CompanyNameTransformScreen from "../components/05_pages/CompanyNameTransformScreen";
 import AddressTransformScreen from "../components/05_pages/AddressTransformScreen";
@@ -14,17 +14,18 @@ import { Colors } from "../styles/Colors";
 
 const Stack = createStackNavigator();
 
-function HomeStack() {
+function ReactNativeStack() {
   const headerOption = {
     headerShown: false,
   };
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} options={headerOption} />
       <Stack.Screen
-        name="Icons"
-        component={IconsScreen}
+        name="ReactNativeHome"
+        component={HomeScreen}
+        options={headerOption}
       />
+      <Stack.Screen name="Icons" component={IconsScreen} />
       <Stack.Screen name="FlexPreview" component={FlexPreviewScreen} />
       <Stack.Screen
         name="Date"
@@ -52,20 +53,20 @@ export function TabNavigator() {
     inactiveBackgroundColor: Colors.background,
     style: { backgroundColor: Colors.background },
   };
-  const homeTabBarIcon = (props: { focused: boolean }) => {
+  const reactNativeTabBarIcon = (props: { focused: boolean }) => {
     const { focused } = props;
-    return <TabBarIcon focused={focused} name="home-outline" />;
+    return <TabBarIcon focused={focused} name="react" />;
   };
 
   return (
-    <Tab.Navigator initialRouteName="Home" tabBarOptions={tabBarOptions}>
+    <Tab.Navigator initialRouteName="ReactNative" tabBarOptions={tabBarOptions}>
       <Tab.Screen
-        name="Home"
-        component={HomeStack}
+        name="ReactNative"
+        component={ReactNativeStack}
         options={{
           headerShown: false,
-          tabBarLabel: "Home",
-          tabBarIcon: homeTabBarIcon,
+          tabBarLabel: "ReactNative",
+          tabBarIcon: reactNativeTabBarIcon,
         }}
       />
     </Tab.Navigator>

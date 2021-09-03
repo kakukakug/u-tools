@@ -1,31 +1,12 @@
-import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  TextInput,
-  FlatList,
-} from "react-native";
+import React, { useState, useEffect, useCallback } from "react";
+import { StyleSheet, Text, View, TextInput, FlatList } from "react-native";
 import * as Clipboard from "expo-clipboard";
+import { Snackbar } from "react-native-paper";
 
-import {
-  AntDesign,
-  Entypo,
-  EvilIcons,
-  Feather,
-  FontAwesome,
-  FontAwesome5,
-  Foundation,
-  Ionicons,
-  MaterialIcons,
-  MaterialCommunityIcons,
-  SimpleLineIcons,
-  Octicons,
-  Zocial,
-  Fontisto,
-} from "@expo/vector-icons";
 import { Colors } from "../../../styles/Colors";
+import { Console } from "../../01_atoms/Console";
+import { FontFamilyItem } from "../../01_atoms/FontFamilyItem";
+import { IconItem } from "../../01_atoms/IconItem";
 
 import { Icons, IconFamiliesName } from "../../../common/iconsConst";
 
@@ -33,11 +14,13 @@ export const IconsScreen = () => {
   const [family, setFamily] = useState("AntDesign");
   const [searchText, setSearchText] = useState("");
   const [icons, setIcons] = useState(Icons.AntDesign);
+  const [consoleText, setConsoleText] = useState("");
+  const [selectIcon, setSelectIcon] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const tempIcons = Icons[family];
 
-    console.log(searchText);
     if (searchText === "") {
       setIcons(tempIcons);
       return;
@@ -49,9 +32,23 @@ export const IconsScreen = () => {
     setIcons(filterdIcons);
   }, [family, searchText]);
 
-  const onPressIcon = (props) => {
+  useEffect(() => {
+    const sampleCode = `import { ${family} } from "@expo/vector-icons";
+
+<${family} name="${selectIcon}" size={20} color="#666" />`;
+    setConsoleText(sampleCode);
+  }, [family, selectIcon]);
+
+  const onPressFamily = useCallback((props) => {
+    setSelectIcon("");
+    setFamily(props);
+  }, []);
+
+  const onPressIcon = useCallback((props) => {
+    setSelectIcon(props);
+    setIsVisible(true);
     Clipboard.setString(props);
-  };
+  }, []);
 
   const emptyComponent = () => {
     return (
@@ -59,181 +56,6 @@ export const IconsScreen = () => {
         <Text style={styles.emptyText}>no result</Text>
       </View>
     );
-  };
-  const familyItem = ({ item, index }) => {
-    return (
-      <TouchableOpacity
-        onPress={() => {
-          setFamily(item);
-        }}
-        style={[
-          styles.familyButton,
-          item === family
-            ? { backgroundColor: Colors.primary }
-            : { backgroundColor: Colors.surface },
-        ]}>
-        <Text style={styles.familyText}>{item}</Text>
-      </TouchableOpacity>
-    );
-  };
-  const iconItem = ({ item, index }) => {
-    switch (family) {
-      case "AntDesign":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <AntDesign name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "Octicons":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <Octicons name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "Entypo":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <Entypo name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "EvilIcons":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <EvilIcons name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "Feather":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <Feather name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "FontAwesome":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <FontAwesome name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "FontAwesome5":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <FontAwesome5 name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "Foundation":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <Foundation name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "Ionicons":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <Ionicons name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "MaterialIcons":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <MaterialIcons name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "MaterialCommunityIcons":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <MaterialCommunityIcons name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "SimpleLineIcons":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <SimpleLineIcons name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "Zocial":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <Zocial name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      case "Fontisto":
-        return (
-          <TouchableOpacity
-            onPress={() => {
-              onPressIcon(item);
-            }}
-            style={styles.iconButton}>
-            <Fontisto name={item} size={42} color={Colors.icon} />
-            <Text style={styles.iconName}>{item}</Text>
-          </TouchableOpacity>
-        );
-      default:
-    }
   };
 
   return (
@@ -244,11 +66,6 @@ export const IconsScreen = () => {
         </View>
         <View style={styles.main}>
           <View style={styles.sidebar}>
-            <FlatList
-              style={styles.selectIconSet}
-              data={IconFamiliesName}
-              renderItem={familyItem}
-            />
             <View style={styles.search}>
               <TextInput
                 placeholder={"search icon name"}
@@ -256,25 +73,54 @@ export const IconsScreen = () => {
                 onChangeText={setSearchText}
               />
             </View>
+            <FlatList
+              style={styles.selectIconSet}
+              data={IconFamiliesName}
+              renderItem={({ item }) => {
+                return (
+                  <FontFamilyItem
+                    name={item}
+                    selectFamily={family}
+                    onPress={onPressFamily}
+                  />
+                );
+              }}
+            />
           </View>
 
           <View style={styles.iconView}>
             <FlatList
               data={icons}
-              renderItem={iconItem}
+              renderItem={({ item }) => {
+                return (
+                  <IconItem
+                    name={item}
+                    selectFamily={family}
+                    onPress={onPressIcon}
+                  />
+                );
+              }}
               style={styles.iconList}
               contentContainerStyle={styles.contentContainer}
-              numColumns={8}
+              numColumns={6}
               ListEmptyComponent={emptyComponent}
             />
           </View>
         </View>
-        <View style={styles.code}>
-          <Text style={styles.codeText}>CODE</Text>
-          <Text style={styles.codeText}>CODE</Text>
-          <Text style={styles.codeText}>CODE</Text>
-          <Text style={styles.codeText}>CODE</Text>
-        </View>
+        <Console consoleText={consoleText} />
+        <Snackbar
+          visible={isVisible}
+          onDismiss={() => {
+            setIsVisible(false);
+          }}
+          action={{
+            label: "OK",
+            onPress: () => {
+              setIsVisible(false);
+            },
+          }}>
+          copy icon name to clipbord
+        </Snackbar>
       </View>
     </View>
   );
@@ -295,33 +141,14 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     flexDirection: "row",
+    marginBottom: 10,
   },
   sidebar: {
     padding: 20,
-    borderColor: "#888",
     borderWidth: 1,
-    border: "solid",
+    borderColor: Colors.icon,
   },
   selectIconSet: {},
-  familyButton: {
-    backgroundColor: Colors.surface,
-    padding: 10,
-    marginVertical: 4,
-  },
-  familyText: {
-    color: Colors.text,
-  },
-  code: {
-    backgroundColor: Colors.text,
-    padding: 10,
-    marginVertical: 20,
-    borderRadius: 6,
-  },
-  codeText: {
-    backgroundColor: Colors.icon,
-    color: "#fff",
-    padding: 6,
-  },
   iconView: {
     marginHorizontal: 20,
     flex: 1,
@@ -330,12 +157,12 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
   iconList: {
-    width: 760,
+    width: 800,
     backgroundColor: Colors.surface,
   },
   search: {
     backgroundColor: Colors.surface,
-    marginTop: 10,
+    marginBottom: 10,
     padding: 4,
     borderRadius: 4,
   },
@@ -343,23 +170,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 4,
     padding: 4,
-  },
-  preview: {
-    flex: 1,
-    padding: 20,
-  },
-  iconButton: {
-    width: 80,
-    margin: 4,
-    padding: 10,
-    backgroundColor: Colors.white,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  iconName: {
-    margin: 4,
-    color: Colors.text,
   },
   emptyComponent: {
     margin: 40,

@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from "react";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  TextInput,
-  Picker,
-} from "react-native";
+import React, { useState, useEffect, useCallback } from "react";
+import { ScrollView, StyleSheet, Text, View, Picker } from "react-native";
 
 import { Colors } from "../../../styles/Colors";
+import { Console } from "../../01_atoms/Console";
 
 export const FlexPreviewScreen = () => {
   const [flexDirection, setFlexDirection] = useState("none");
@@ -20,18 +13,18 @@ export const FlexPreviewScreen = () => {
   const [alignContent, setAlignContent] = useState("none");
   const [alignSelf, setAlignSelf] = useState("none");
   const [text, setText] = useState("child");
-  const [flexGrow, setFlexGrow] = useState("");
+  const [flexGrow, setFlexGrow] = useState("none");
   const [flexShrink, setFlexShrink] = useState("none");
   const [flexBasis, setFlexBasis] = useState("none");
-  const [tab, setTab] = useState(false);
+  const [styleText, setStyleText] = useState("");
 
-  const createStyle = (propObj) => {
+  const createStyle = useCallback((propObj) => {
     let style = {};
     for (var key in propObj) {
-      if (propObj[key] != "none") {
+      if (propObj[key] !== "none") {
         if (["flex", "flexGrow", "flexShrink"].includes(key)) {
           style[key] = Number(propObj[key]);
-        } else if ("flexBasis" === key && propObj[key] != "auto") {
+        } else if (key === "flexBasis" && propObj[key] !== "auto") {
           style[key] = Number(propObj[key]);
         } else {
           style[key] = propObj[key];
@@ -39,7 +32,7 @@ export const FlexPreviewScreen = () => {
       }
     }
     return style;
-  };
+  }, []);
 
   const PreviewChild = (data) => {
     return (
@@ -49,7 +42,7 @@ export const FlexPreviewScreen = () => {
           createStyle({
             flex: flex,
           }),
-          data.no == 2
+          data.no === 2
             ? createStyle({
                 flexGrow: flexGrow,
                 flexShrink: flexShrink,
@@ -59,7 +52,7 @@ export const FlexPreviewScreen = () => {
             : {},
         ]}>
         <Text
-          style={[styles.previewText, data.no == 2 ? { color: "#e77" } : {}]}>
+          style={[styles.previewText, data.no === 2 ? { color: "#e77" } : {}]}>
           {text}-{data.no}
         </Text>
       </View>
@@ -96,9 +89,11 @@ export const FlexPreviewScreen = () => {
           selectedValue={value}
           style={styles.picker}
           itemStyle={styles.pickerItem}
-          onValueChange={(itemValue, itemIndex) => onValueChange(itemValue)}>
-          {selectionArray.map((name, index) => {
-            return <Picker.Item label={name} value={name} key={index} />;
+          onValueChange={(itemValue) => {
+            onValueChange(itemValue);
+          }}>
+          {selectionArray.map((label, index) => {
+            return <Picker.Item label={label} value={value} key={index} />;
           })}
         </Picker>
       </View>
@@ -186,7 +181,7 @@ export const FlexPreviewScreen = () => {
             selectionArray={["none", "1", "2"]}
           />
           <Text style={styles.h2Text}>
-            only <Text style={{ color: "#e77" }}>Child-2</Text> style prop
+            only <Text style={{ color: "#e77" }}>child-2</Text> style prop
           </Text>
           <SettingComponent
             name={"flexGrow"}
@@ -225,95 +220,82 @@ export const FlexPreviewScreen = () => {
     );
   };
 
-  const styleTextFormat = (obj) => {
-    let styleObj = createStyle(obj);
-    let ret = "";
-    for (var key in styleObj) {
-      if (typeof styleObj[key] === "string") {
-        ret += "    " + key + ': "' + styleObj[key] + '"' + ",\n";
-      } else {
-        ret += "    " + key + ": " + styleObj[key] + ",\n";
+  const styleTextFormat = useCallback(
+    (obj) => {
+      let styleObj = createStyle(obj);
+      let ret = "";
+      for (var key in styleObj) {
+        if (typeof styleObj[key] === "string") {
+          ret += "    " + key + ': "' + styleObj[key] + '"' + ",\n";
+        } else {
+          ret += "    " + key + ": " + styleObj[key] + ",\n";
+        }
       }
-    }
-    return ret;
-  };
-  const createStyleText = () => {
-    let parent, children, child2;
-    parent = styleTextFormat({
+      return ret;
+    },
+    [createStyle]
+  );
+
+  useEffect(() => {
+    const parent = styleTextFormat({
       flexDirection: flexDirection,
       justifyContent: justifyContent,
       alignItems: alignItems,
       flexWrap: flexWrap,
       alignContent: alignContent,
     });
-    children = styleTextFormat({
+    const children = styleTextFormat({
       flex: flex,
     });
-    child2 = styleTextFormat({
+    const child2 = styleTextFormat({
       flexGrow: flexGrow,
       flexShrink: flexShrink,
       flexBasis: flexBasis,
       alignSelf: alignSelf,
     });
-    return `  parent: {
+    setStyleText(`  parent: {
     flex: 1,
-${parent}
-  },
+${parent}  },
   chidren: {
-${children}
-  },
+${children}  },
   child-2: {
-${child2}
-  },`;
-  };
-
-  const TabBarComponent = () => {
-    if (tab == false) {
-      return (
-        <View style={styles.tabBarInfoContainer}>
-          <TouchableOpacity
-            style={styles.openButton}
-            onPress={() => {
-              setTab(true);
-            }}>
-            <Text style={styles.tabBarInfoText}>open style text</Text>
-          </TouchableOpacity>
-        </View>
-      );
-    }
-    const styleText = createStyleText();
-    return (
-      <View style={styles.tabBarInfoContainer}>
-        <TextInput
-          style={styles.tabBarStyleForm}
-          multiline={true}
-          editable={false}
-          value={styleText}
-        />
-        <TouchableOpacity
-          style={styles.openButton}
-          onPress={() => {
-            setTab(false);
-          }}>
-          <Text style={styles.tabBarInfoText}>close</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  };
+${child2}  },`);
+  }, [
+    flexDirection,
+    justifyContent,
+    alignItems,
+    flexWrap,
+    alignContent,
+    flex,
+    flexGrow,
+    flexShrink,
+    flexBasis,
+    alignSelf,
+    styleTextFormat,
+  ]);
 
   return (
     <View style={styles.container}>
       <ScrollView
         style={styles.scrollContainer}
         contentContainerStyle={styles.contentContainer}>
-        <View style={styles.createrContainer}>
-          <Text style={styles.subTitleText}>Preview</Text>
-          <PreviewContainer />
-          <Text style={styles.subTitleText}>Property selecter</Text>
-          <CustomerContainer />
+        <View style={styles.title}>
+          <Text style={styles.titleText}>
+            React Native FlexBox Style Creator
+          </Text>
+        </View>
+        <View style={styles.main}>
+          <View style={styles.settingContainer}>
+            <Text style={styles.subTitleText}>Property selecter</Text>
+            <CustomerContainer />
+          </View>
+          <View style={styles.previewContainer}>
+            <Text style={styles.subTitleText}>Preview</Text>
+            <PreviewContainer />
+          </View>
         </View>
       </ScrollView>
-      <TabBarComponent />
+      <Console consoleText={styleText} />
     </View>
   );
 };
@@ -330,26 +312,37 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  createrContainer: {
+  main: {
     flex: 1,
+    flexDirection: "row",
+  },
+  settingContainer: {
     padding: 10,
-    maxWidth: 400,
+    width: 400,
+  },
+  previewContainer: {
+    padding: 10,
+    width: 400,
   },
   customerContainer: {
     flex: 3,
     flexDirection: "row",
+    alignItems: "flex-start",
   },
 
   parentCustomer: {
     flex: 1,
-    backgroundColor: "#eee",
+    backgroundColor: Colors.surface,
     paddingHorizontal: 4,
+    height: 300,
   },
   childCustomer: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: Colors.surface,
+    backgroundColor: Colors.white,
     paddingHorizontal: 4,
+    borderWidth: 1,
+    borderColor: Colors.icon,
+    height: 300,
   },
 
   parent: {
@@ -358,19 +351,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   children: {
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.white,
     borderWidth: 1,
-    borderColor: "#666",
+    borderColor: Colors.icon,
     padding: 2,
   },
   previewText: {
     color: Colors.text,
   },
-
-  styleProp: {
-    borderWidth: 1,
-  },
-
   flexRow: {
     flexDirection: "row",
     justifyContent: "flex-end",
@@ -378,38 +366,30 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
 
-  titleText: {
-    fontSize: 20,
-    color: Colors.text,
-    lineHeight: 24,
-    textAlign: "center",
-  },
   subTitleText: {
-    fontSize: 14,
-    color: Colors.text,
-    lineHeight: 24,
+    fontSize: 26,
+    color: Colors.icon,
     textAlign: "center",
     paddingTop: 6,
   },
   h1Text: {
-    fontSize: 14,
+    fontSize: 20,
     color: Colors.text,
-    lineHeight: 20,
-    textAlign: "center",
-  },
-  h2Text: {
-    fontSize: 12,
-    color: Colors.text,
-    lineHeight: 20,
     textAlign: "center",
     paddingTop: 6,
   },
+  h2Text: {
+    fontSize: 16,
+    color: Colors.text,
+    textAlign: "center",
+    paddingTop: 10,
+  },
   stylePropText: {
-    fontSize: 12,
+    fontSize: 14,
     color: "rgba(96,100,109, 1)",
-    lineHeight: 24,
     textAlign: "center",
     paddingHorizontal: 6,
+    paddingVertical: 4,
   },
 
   picker: {
@@ -419,35 +399,6 @@ const styles = StyleSheet.create({
   },
   pickerItem: {},
 
-  openButton: {
-    width: "100%",
-  },
-
-  tabBarInfoContainer: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    borderTopWidth: 1,
-    borderColor: "#666",
-    alignItems: "center",
-    backgroundColor: "#fbfbfb",
-    paddingVertical: 6,
-  },
-  tabBarInfoText: {
-    fontSize: 15,
-    paddingVertical: 5,
-    color: "rgba(96,100,109, 1)",
-    textAlign: "center",
-  },
-  tabBarStyleForm: {
-    fontSize: 12,
-    width: "80%",
-    height: 250,
-    padding: 5,
-    borderWidth: 1,
-    borderColor: Colors.surface,
-    borderRadius: 4,
-    textAlignVertical: "top",
-  },
+  title: { marginVertical: 10 },
+  titleText: { fontSize: 38, color: Colors.text },
 });

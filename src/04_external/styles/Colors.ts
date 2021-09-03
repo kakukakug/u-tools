@@ -8,7 +8,6 @@ export const Colors = {
   white: "#fffffe",
   primary: "#8fc5ec",
 
-
   tintColor,
   tabIconDefault: "#ccc",
   tabIconSelected: tintColor,
