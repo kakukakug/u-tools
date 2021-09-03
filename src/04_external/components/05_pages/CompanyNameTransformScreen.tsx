@@ -1,52 +1,59 @@
-import * as React from 'react';
-import { Button, TextInput, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import {
+  Button,
+  TextInput,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 class CompanyNameTransformScreen extends React.Component {
   static navigationOptions = { header: null };
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
-      transformed: '',
+      value: "",
+      transformed: "",
       valueNo: 0,
       transformedNo: 0,
       result: false,
-      errorMessage: '',
+      errorMessage: "",
     };
   }
 
   transform = () => {
-    let error = '';
-    let errorMessage = '';
-    let textArray = this.state.value.split('\n');
+    let error = "";
+    let errorMessage = "";
+    let textArray = this.state.value.split("\n");
     let valueNo = textArray.length;
 
     let transformArray = textArray.map((text, index) => {
-      if (text === '') {
-        error = error + (index + 1) + ',';
-        return '';
+      if (text === "") {
+        error = error + (index + 1) + ",";
+        return "";
       }
-      text = text.replace(/(.*)[\(（]株[\)）](.*)/, '$1株式会社$2');
-      text = text.replace('㈱', '株式会社');
+      text = text.replace(/(.*)[\(（]株[\)）](.*)/, "$1株式会社$2");
+      text = text.replace("㈱", "株式会社");
 
-      text = text.replace(/(.*)[\(（]有[\)）](.*)/, '$1有限会社$2');
-      text = text.replace('㈲', '有限会社');
+      text = text.replace(/(.*)[\(（]有[\)）](.*)/, "$1有限会社$2");
+      text = text.replace("㈲", "有限会社");
 
-      text = text.replace(/(.*)[\(（][合同][\)）](.*)/, '$1合同会社$2');
-      text = text.replace(/(.*)[\(（]資[\)）](.*)/, '$1合資会社$2');
+      text = text.replace(/(.*)[\(（][合同][\)）](.*)/, "$1合同会社$2");
+      text = text.replace(/(.*)[\(（]資[\)）](.*)/, "$1合資会社$2");
 
-      text = text.replace(/[Ａ-Ｚａ-ｚ０-９]/g, s => {
+      text = text.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => {
         return String.fromCharCode(s.charCodeAt(0) - 0xfee0);
       });
-      text = text.replace(/　/g, ' ');
+      text = text.replace(/　/g, " ");
       return text;
     });
     let transformedNo = transformArray.length;
-    let transformText = transformArray.join('\n');
-    if (error != '') {
-      errorMessage = error + '行が変換出来なかった可能性が有ります。';
+    let transformText = transformArray.join("\n");
+    if (error !== "") {
+      errorMessage = error + "行が変換出来なかった可能性が有ります。";
     } else {
-      errorMessage = '';
+      errorMessage = "";
     }
 
     this.setState({
@@ -64,12 +71,14 @@ class CompanyNameTransformScreen extends React.Component {
         <View style={styles.form}>
           <Text style={styles.pageTitle}>会社名変換フォーム</Text>
           <Text style={styles.formTitle}>会社名を入力してください。</Text>
-          <Text style={styles.formSubTitle}></Text>
+          <Text style={styles.formSubTitle} />
           <TextInput
             style={styles.textInput}
             multiline={true}
             numberOfLines={4}
-            onChangeText={text => this.setState({ value: text })}
+            onChangeText={(text) => {
+              this.setState({ value: text });
+            }}
             value={this.state.value}
             placeholder="改行で複数のデータを入力できます"
           />
@@ -85,7 +94,8 @@ class CompanyNameTransformScreen extends React.Component {
           />
           {this.state.result === true ? (
             <Text style={styles.noticeText}>
-              {this.state.valueNo}行を{this.state.transformedNo}行に変換しました。
+              {this.state.valueNo}行を{this.state.transformedNo}
+              行に変換しました。
               {this.state.errorMessage}
             </Text>
           ) : null}
@@ -98,17 +108,17 @@ class CompanyNameTransformScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ddd',
+    backgroundColor: "#ddd",
   },
   pageTitle: {
     padding: 10,
     fontSize: 20,
   },
   form: {
-    backgroundColor: '#fffffe',
+    backgroundColor: "#fffffe",
     flex: 1,
     padding: 30,
-    alignSelf: 'center',
+    alignSelf: "center",
   },
   formTitle: {
     paddingHorizontal: 5,
@@ -116,7 +126,7 @@ const styles = StyleSheet.create({
   formSubTitle: {
     padding: 5,
     fontSize: 10,
-    color: '#666',
+    color: "#666",
   },
   textInput: {
     padding: 10,
@@ -126,12 +136,12 @@ const styles = StyleSheet.create({
   formButton: {
     marginTop: 10,
     marginBottom: 30,
-    alignSelf: 'center',
+    alignSelf: "center",
   },
   noticeText: {
     margin: 10,
-    alignSelf: 'center',
-    width:200,
+    alignSelf: "center",
+    width: 200,
   },
 });
 

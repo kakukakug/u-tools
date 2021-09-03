@@ -1,22 +1,32 @@
-import React from 'react';
+import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import TabBarIcon from '../components/01_atoms/TabBarIcon';
-import HomeScreen from '../components/05_pages/HomeScreen';
-import DatetimeTransformScreen from '../components/05_pages/DatetimeTransformScreen';
-import CompanyNameTransformScreen from '../components/05_pages/CompanyNameTransformScreen';
-import AddressTransformScreen from '../components/05_pages/AddressTransformScreen';
+import TabBarIcon from "../components/01_atoms/TabBarIcon";
+import { HomeScreen } from "../components/05_pages/HomeScreen";
+import { IconsScreen } from "../components/05_pages/IconsScreen";
+import { FlexPreviewScreen } from "../components/05_pages/FlexPreviewScreen";
+import DatetimeTransformScreen from "../components/05_pages/DatetimeTransformScreen";
+import CompanyNameTransformScreen from "../components/05_pages/CompanyNameTransformScreen";
+import AddressTransformScreen from "../components/05_pages/AddressTransformScreen";
+
+import { Colors } from "../styles/Colors";
 
 const Stack = createStackNavigator();
 
-function HomeStack() {
+function ReactNativeStack() {
   const headerOption = {
     headerShown: false,
   };
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} options={headerOption} />
+      <Stack.Screen
+        name="ReactNativeHome"
+        component={HomeScreen}
+        options={headerOption}
+      />
+      <Stack.Screen name="Icons" component={IconsScreen} />
+      <Stack.Screen name="FlexPreview" component={FlexPreviewScreen} />
       <Stack.Screen
         name="Date"
         component={DatetimeTransformScreen}
@@ -27,7 +37,11 @@ function HomeStack() {
         component={CompanyNameTransformScreen}
         options={headerOption}
       />
-      <Stack.Screen name="Address" component={AddressTransformScreen} options={headerOption} />
+      <Stack.Screen
+        name="Address"
+        component={AddressTransformScreen}
+        options={headerOption}
+      />
     </Stack.Navigator>
   );
 }
@@ -36,23 +50,25 @@ const Tab = createBottomTabNavigator();
 
 export function TabNavigator() {
   const tabBarOptions = {
-    inactiveBackgroundColor: "#ffffff",
-    style: { backgroundColor: "#ffffff" },
+    inactiveBackgroundColor: Colors.background,
+    style: { backgroundColor: Colors.background },
   };
-  const homeTabBarIcon = (props: { focused: boolean }) => {
+  const reactNativeTabBarIcon = (props: { focused: boolean }) => {
     const { focused } = props;
-    return <TabBarIcon focused={focused} name="home-outline" />;
+    return <TabBarIcon focused={focused} name="react" />;
   };
 
   return (
-    <Tab.Navigator initialRouteName="Home" tabBarOptions={tabBarOptions}>
+    <Tab.Navigator initialRouteName="ReactNative" tabBarOptions={tabBarOptions}>
       <Tab.Screen
-        name="Home"
-        component={HomeStack}
-        options={{ tabBarLabel: "Home", tabBarIcon: homeTabBarIcon }}
+        name="ReactNative"
+        component={ReactNativeStack}
+        options={{
+          headerShown: false,
+          tabBarLabel: "ReactNative",
+          tabBarIcon: reactNativeTabBarIcon,
+        }}
       />
     </Tab.Navigator>
   );
 }
-
-
