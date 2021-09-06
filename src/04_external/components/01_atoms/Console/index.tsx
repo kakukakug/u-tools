@@ -66,6 +66,7 @@ export const Console = (props: OuterProps) => {
         multiline={true}
         editable={false}
         value={consoleText}
+        testID={"console-text"}
       />
       <TouchableOpacity
         style={styles.button}

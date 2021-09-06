@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FontFamilyItem FontFamilyItemを描写 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#8fc5ec",
+      "marginVertical": 4,
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
+    test
+  </Text>
+</View>
+`;
+
+exports[`FontFamilyItem FontFamilyItemを描写 active ではない場合 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#ccc",
+      "marginVertical": 4,
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+  testID="fontFamilyItem"
+>
+  <Text
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
+    IonIcons
+  </Text>
+</View>
+`;
+
+exports[`FontFamilyItem FontFamilyItemを描写 activeの場合 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#8fc5ec",
+      "marginVertical": 4,
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+  testID="fontFamilyItem"
+>
+  <Text
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
+    IonIcons
+  </Text>
+</View>
+`;

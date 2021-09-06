@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconItem IconItemを描写 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fffffe",
+      "borderRadius": 10,
+      "justifyContent": "center",
+      "margin": 4,
+      "opacity": 1,
+      "padding": 10,
+      "width": 120,
+    }
+  }
+>
+  <Text />
+  <Text
+    style={
+      Object {
+        "color": "#333",
+        "fontSize": 14,
+        "margin": 4,
+      }
+    }
+  >
+    star
+  </Text>
+</View>
+`;
