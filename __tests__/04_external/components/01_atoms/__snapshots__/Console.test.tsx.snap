@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Console Consoleを描写 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#333",
+      "width": "100%",
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    editable={false}
+    multiline={true}
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "#666",
+        "borderRadius": 4,
+        "color": "#fffff9",
+        "fontSize": 16,
+        "height": 250,
+        "marginHorizontal": 10,
+        "marginTop": 10,
+        "padding": 5,
+        "textAlignVertical": "top",
+      }
+    }
+    testID="console-text"
+    underlineColorAndroid="transparent"
+    value="test console"
+  />
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fffffe",
+          "fontSize": 18,
+          "paddingVertical": 5,
+          "textAlign": "center",
+        }
+      }
+    >
+      close
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Console button をタップしたとき、consoleが閉じる 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#333",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fffffe",
+          "fontSize": 18,
+          "paddingVertical": 5,
+          "textAlign": "center",
+        }
+      }
+    >
+      open output text
+    </Text>
+  </View>
+</View>
+`;

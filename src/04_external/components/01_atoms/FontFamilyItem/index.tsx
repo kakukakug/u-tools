@@ -25,7 +25,8 @@ export const FontFamilyItem = (props) => {
         name === selectFamily
           ? { backgroundColor: Colors.primary }
           : { backgroundColor: Colors.surface },
-      ]}>
+      ]}
+      testID={"fontFamilyItem"}>
       <Text style={styles.familyText}>{name}</Text>
     </TouchableOpacity>
   );
