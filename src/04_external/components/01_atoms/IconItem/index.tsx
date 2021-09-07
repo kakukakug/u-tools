@@ -36,10 +36,17 @@ const styles = StyleSheet.create({
   },
 });
 
+type OuterProps = {
+  name: string;
+  onPress: (props: string) => void;
+  selectFamily: string;
+};
+
 const iconSize = 42;
 
-export const IconItem = (props) => {
+export const IconItem = (props: OuterProps) => {
   const { name, onPress, selectFamily } = props;
+  console.log("render icon")
   const getIconConponrnt = () => {
     switch (selectFamily) {
       case "AntDesign":

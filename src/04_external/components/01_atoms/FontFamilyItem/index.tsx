@@ -13,7 +13,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export const FontFamilyItem = (props) => {
+type OuterProps = {
+  name: string;
+  onPress: (props: string) => void;
+  selectFamily: string;
+};
+
+export const FontFamilyItem = (props: OuterProps) => {
   const { name, onPress, selectFamily } = props;
   return (
     <TouchableOpacity

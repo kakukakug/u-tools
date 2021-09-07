@@ -66,3 +66,16 @@ export const Icons = {
   Zocial,
   Fontisto,
 };
+
+export const iconSearch = (selectFamily, selectSearch) => {
+  const tempIcons = Icons[selectFamily];
+
+  if (selectSearch === "") {
+    return tempIcons;
+  }
+  const re = new RegExp(`.*${selectSearch}.*`, "g");
+  const filterdIcons = tempIcons.filter((icon) => {
+    return re.test(icon);
+  });
+  return filterdIcons;
+}

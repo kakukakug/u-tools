@@ -5,6 +5,27 @@ import { useNavigation } from "@react-navigation/native";
 
 import { Colors } from "../../../styles/Colors";
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.background,
+  },
+  contentContainer: {},
+  menuContainer: {
+    marginTop: 15,
+    alignItems: "center",
+  },
+  linkButton: {
+    margin: 10,
+  },
+  buttonText: {
+    fontSize: 20,
+    color: Colors.text,
+  },
+  title: { marginVertical: 10, alignSelf: "center" },
+  titleText: { fontSize: 38, color: Colors.text },
+});
+
 export const HomeScreen = () => {
   const navigation = useNavigation();
 
@@ -44,24 +65,3 @@ export const HomeScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.background,
-  },
-  contentContainer: {},
-  menuContainer: {
-    marginTop: 15,
-    alignItems: "center",
-  },
-  linkButton: {
-    margin: 10,
-  },
-  buttonText: {
-    fontSize: 20,
-    color: "#2e78b7",
-  },
-  title: { marginVertical: 10, alignSelf: "center" },
-  titleText: { fontSize: 38, color: Colors.text },
-});

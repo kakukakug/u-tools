@@ -4,6 +4,10 @@ import { ScrollView, StyleSheet, Text, View, Picker } from "react-native";
 import { Colors } from "../../../styles/Colors";
 import { Console } from "../../01_atoms/Console";
 
+import { styleTextFormat } from "../../../../01_entity/models/flex_style";
+
+import { PreviewComponent } from "./PreviewComponent";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -49,22 +53,8 @@ const styles = StyleSheet.create({
     height: 300,
   },
 
-  parent: {
-    backgroundColor: Colors.surface,
-    padding: 10,
-    flex: 1,
-  },
-  children: {
-    backgroundColor: Colors.white,
-    borderWidth: 1,
-    borderColor: Colors.icon,
-    padding: 2,
-  },
   child2: {
     color: Colors.notification,
-  },
-  previewText: {
-    color: Colors.text,
   },
   flexRow: {
     flexDirection: "row",
@@ -110,6 +100,26 @@ const styles = StyleSheet.create({
   titleText: { fontSize: 38, color: Colors.text },
 });
 
+const SettingComponent = (data) => {
+  const { name, value, onValueChange, selectionArray } = data;
+  return (
+    <View style={styles.flexRow}>
+      <Text style={styles.stylePropText}>{name}</Text>
+      <Picker
+        selectedValue={value}
+        style={styles.picker}
+        itemStyle={styles.pickerItem}
+        onValueChange={(itemValue) => {
+          onValueChange(itemValue);
+        }}>
+        {selectionArray.map((label, index) => {
+          return <Picker.Item label={label} value={label} key={index} />;
+        })}
+      </Picker>
+    </View>
+  );
+};
+
 export const FlexPreviewScreen = () => {
   const [flexDirection, setFlexDirection] = useState("none");
   const [justifyContent, setJustifyContent] = useState("none");
@@ -124,90 +134,6 @@ export const FlexPreviewScreen = () => {
   const [flexBasis, setFlexBasis] = useState("none");
   const [styleText, setStyleText] = useState("");
 
-  const createStyle = useCallback((propObj) => {
-    let style = {};
-    for (var key in propObj) {
-      if (propObj[key] !== "none") {
-        if (["flex", "flexGrow", "flexShrink"].includes(key)) {
-          style[key] = Number(propObj[key]);
-        } else if (key === "flexBasis" && propObj[key] !== "auto") {
-          style[key] = Number(propObj[key]);
-        } else {
-          style[key] = propObj[key];
-        }
-      }
-    }
-    return style;
-  }, []);
-
-  const PreviewChild = (data) => {
-    return (
-      <View
-        style={[
-          styles.children,
-          createStyle({
-            flex: flex,
-          }),
-          data.no === 2
-            ? createStyle({
-                flexGrow: flexGrow,
-                flexShrink: flexShrink,
-                flexBasis: flexBasis,
-                alignSelf: alignSelf,
-              })
-            : {},
-        ]}>
-        <Text
-          style={[
-            styles.previewText,
-            data.no === 2 ? { color: Colors.notification } : {},
-          ]}>
-          {text}-{data.no}
-        </Text>
-      </View>
-    );
-  };
-
-  const PreviewContainer = () => {
-    return (
-      <View
-        style={[
-          styles.parent,
-          createStyle({
-            flexDirection: flexDirection,
-            justifyContent: justifyContent,
-            alignItems: alignItems,
-            flexWrap: flexWrap,
-            alignContent: alignContent,
-          }),
-        ]}>
-        <PreviewChild no={1} />
-        <PreviewChild no={2} />
-        <PreviewChild no={3} />
-        <PreviewChild no={4} />
-      </View>
-    );
-  };
-
-  const SettingComponent = (data) => {
-    const { name, value, onValueChange, selectionArray } = data;
-    return (
-      <View style={styles.flexRow}>
-        <Text style={styles.stylePropText}>{name}</Text>
-        <Picker
-          selectedValue={value}
-          style={styles.picker}
-          itemStyle={styles.pickerItem}
-          onValueChange={(itemValue) => {
-            onValueChange(itemValue);
-          }}>
-          {selectionArray.map((label, index) => {
-            return <Picker.Item label={label} value={label} key={index} />;
-          })}
-        </Picker>
-      </View>
-    );
-  };
   const CustomerContainer = () => {
     return (
       <View style={styles.customerContainer}>
@@ -329,22 +255,6 @@ export const FlexPreviewScreen = () => {
     );
   };
 
-  const styleTextFormat = useCallback(
-    (obj) => {
-      let styleObj = createStyle(obj);
-      let ret = "";
-      for (var key in styleObj) {
-        if (typeof styleObj[key] === "string") {
-          ret += "    " + key + ': "' + styleObj[key] + '"' + ",\n";
-        } else {
-          ret += "    " + key + ": " + styleObj[key] + ",\n";
-        }
-      }
-      return ret;
-    },
-    [createStyle]
-  );
-
   useEffect(() => {
     const parent = styleTextFormat({
       flexDirection: flexDirection,
@@ -400,7 +310,19 @@ ${child2}  },`);
           </View>
           <View style={styles.previewContainer}>
             <Text style={styles.subTitleText}>Preview</Text>
-            <PreviewContainer />
+            <PreviewComponent
+              flexDirection={flexDirection}
+              justifyContent={justifyContent}
+              alignItems={alignItems}
+              flexWrap={flexWrap}
+              alignContent={alignContent}
+              flex={flex}
+              flexGrow={flexGrow}
+              flexShrink={flexShrink}
+              flexBasis={flexBasis}
+              alignSelf={alignSelf}
+              text={text}
+            />
           </View>
         </View>
       </ScrollView>
@@ -408,4 +330,3 @@ ${child2}  },`);
     </View>
   );
 };
-

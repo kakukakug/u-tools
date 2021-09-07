@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import TabBarIcon from "../components/01_atoms/TabBarIcon";
+import { TabBarIcon } from "../components/01_atoms/TabBarIcon";
 import { HomeScreen } from "../components/05_pages/HomeScreen";
 import { IconsScreen } from "../components/05_pages/IconsScreen";
 import { FlexPreviewScreen } from "../components/05_pages/FlexPreviewScreen";
