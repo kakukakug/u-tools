@@ -7,6 +7,7 @@ export const Colors = {
   icon: "#666",
   white: "#fffffe",
   primary: "#8fc5ec",
+  notification: "#e77",
 
   tintColor,
   tabIconDefault: "#ccc",

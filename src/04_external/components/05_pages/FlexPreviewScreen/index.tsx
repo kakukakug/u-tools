@@ -52,7 +52,10 @@ export const FlexPreviewScreen = () => {
             : {},
         ]}>
         <Text
-          style={[styles.previewText, data.no === 2 ? { color: "#e77" } : {}]}>
+          style={[
+            styles.previewText,
+            data.no === 2 ? { color: Colors.notification } : {},
+          ]}>
           {text}-{data.no}
         </Text>
       </View>
@@ -181,7 +184,7 @@ export const FlexPreviewScreen = () => {
             selectionArray={["none", "1", "2"]}
           />
           <Text style={styles.h2Text}>
-            only <Text style={{ color: "#e77" }}>child-2</Text> style prop
+            only <Text style={styles.child2}>child-2</Text> style prop
           </Text>
           <SettingComponent
             name={"flexGrow"}
@@ -355,6 +358,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.icon,
     padding: 2,
+  },
+  child2: {
+    color: Colors.notification,
   },
   previewText: {
     color: Colors.text,
