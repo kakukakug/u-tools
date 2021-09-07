@@ -4,6 +4,112 @@ import { ScrollView, StyleSheet, Text, View, Picker } from "react-native";
 import { Colors } from "../../../styles/Colors";
 import { Console } from "../../01_atoms/Console";
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.background,
+  },
+  scrollContainer: {
+    flex: 1,
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: "center",
+  },
+  main: {
+    flex: 1,
+    flexDirection: "row",
+  },
+  settingContainer: {
+    padding: 10,
+    width: 400,
+  },
+  previewContainer: {
+    padding: 10,
+    width: 400,
+  },
+  customerContainer: {
+    flex: 3,
+    flexDirection: "row",
+    alignItems: "flex-start",
+  },
+
+  parentCustomer: {
+    flex: 1,
+    backgroundColor: Colors.surface,
+    paddingHorizontal: 4,
+    height: 300,
+  },
+  childCustomer: {
+    flex: 1,
+    backgroundColor: Colors.white,
+    paddingHorizontal: 4,
+    borderWidth: 1,
+    borderColor: Colors.icon,
+    height: 300,
+  },
+
+  parent: {
+    backgroundColor: Colors.surface,
+    padding: 10,
+    flex: 1,
+  },
+  children: {
+    backgroundColor: Colors.white,
+    borderWidth: 1,
+    borderColor: Colors.icon,
+    padding: 2,
+  },
+  child2: {
+    color: Colors.notification,
+  },
+  previewText: {
+    color: Colors.text,
+  },
+  flexRow: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    paddingHorizontal: 4,
+  },
+
+  subTitleText: {
+    fontSize: 26,
+    color: Colors.icon,
+    textAlign: "center",
+    paddingTop: 6,
+  },
+  h1Text: {
+    fontSize: 20,
+    color: Colors.text,
+    textAlign: "center",
+    paddingTop: 6,
+  },
+  h2Text: {
+    fontSize: 16,
+    color: Colors.text,
+    textAlign: "center",
+    paddingTop: 10,
+  },
+  stylePropText: {
+    fontSize: 14,
+    color: "rgba(96,100,109, 1)",
+    textAlign: "center",
+    paddingHorizontal: 6,
+    paddingVertical: 4,
+  },
+
+  picker: {
+    height: 20,
+    width: 60,
+    borderRadius: 4,
+  },
+  pickerItem: {},
+
+  title: { marginVertical: 10 },
+  titleText: { fontSize: 38, color: Colors.text },
+});
+
 export const FlexPreviewScreen = () => {
   const [flexDirection, setFlexDirection] = useState("none");
   const [justifyContent, setJustifyContent] = useState("none");
@@ -96,7 +202,7 @@ export const FlexPreviewScreen = () => {
             onValueChange(itemValue);
           }}>
           {selectionArray.map((label, index) => {
-            return <Picker.Item label={label} value={value} key={index} />;
+            return <Picker.Item label={label} value={label} key={index} />;
           })}
         </Picker>
       </View>
@@ -303,108 +409,3 @@ ${child2}  },`);
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.background,
-  },
-  scrollContainer: {
-    flex: 1,
-  },
-  contentContainer: {
-    flex: 1,
-    alignItems: "center",
-  },
-  main: {
-    flex: 1,
-    flexDirection: "row",
-  },
-  settingContainer: {
-    padding: 10,
-    width: 400,
-  },
-  previewContainer: {
-    padding: 10,
-    width: 400,
-  },
-  customerContainer: {
-    flex: 3,
-    flexDirection: "row",
-    alignItems: "flex-start",
-  },
-
-  parentCustomer: {
-    flex: 1,
-    backgroundColor: Colors.surface,
-    paddingHorizontal: 4,
-    height: 300,
-  },
-  childCustomer: {
-    flex: 1,
-    backgroundColor: Colors.white,
-    paddingHorizontal: 4,
-    borderWidth: 1,
-    borderColor: Colors.icon,
-    height: 300,
-  },
-
-  parent: {
-    backgroundColor: Colors.surface,
-    padding: 10,
-    flex: 1,
-  },
-  children: {
-    backgroundColor: Colors.white,
-    borderWidth: 1,
-    borderColor: Colors.icon,
-    padding: 2,
-  },
-  child2: {
-    color: Colors.notification,
-  },
-  previewText: {
-    color: Colors.text,
-  },
-  flexRow: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    paddingHorizontal: 4,
-  },
-
-  subTitleText: {
-    fontSize: 26,
-    color: Colors.icon,
-    textAlign: "center",
-    paddingTop: 6,
-  },
-  h1Text: {
-    fontSize: 20,
-    color: Colors.text,
-    textAlign: "center",
-    paddingTop: 6,
-  },
-  h2Text: {
-    fontSize: 16,
-    color: Colors.text,
-    textAlign: "center",
-    paddingTop: 10,
-  },
-  stylePropText: {
-    fontSize: 14,
-    color: "rgba(96,100,109, 1)",
-    textAlign: "center",
-    paddingHorizontal: 6,
-    paddingVertical: 4,
-  },
-
-  picker: {
-    height: 20,
-    width: 60,
-    borderRadius: 4,
-  },
-  pickerItem: {},
-
-  title: { marginVertical: 10 },
-  titleText: { fontSize: 38, color: Colors.text },
-});
