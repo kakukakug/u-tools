@@ -26,7 +26,7 @@ function ReactNativeStack() {
         options={headerOption}
       />
       <Stack.Screen name="Icons" component={IconsScreen} />
-      <Stack.Screen name="FlexPreview" component={FlexPreviewScreen} />
+      <Stack.Screen name="FlexBox" component={FlexPreviewScreen} />
       <Stack.Screen
         name="Date"
         component={DatetimeTransformScreen}
@@ -50,8 +50,8 @@ const Tab = createBottomTabNavigator();
 
 export function TabNavigator() {
   const tabBarOptions = {
-    inactiveBackgroundColor: Colors.background,
-    style: { backgroundColor: Colors.background },
+    tabBarInactiveBackgroundColor: Colors.background,
+    tabBarActiveBackgroundColor: Colors.text,
   };
   const reactNativeTabBarIcon = (props: { focused: boolean }) => {
     const { focused } = props;
@@ -59,7 +59,7 @@ export function TabNavigator() {
   };
 
   return (
-    <Tab.Navigator initialRouteName="ReactNative" tabBarOptions={tabBarOptions}>
+    <Tab.Navigator initialRouteName="ReactNative" screenOptions={tabBarOptions}>
       <Tab.Screen
         name="ReactNative"
         component={ReactNativeStack}

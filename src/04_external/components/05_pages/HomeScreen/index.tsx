@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, ScrollView, StyleSheet, View } from "react-native";
 import { Button } from "react-native-paper";
-import { useNavigation } from "@react-navigation/native";
+import {  useNavigation } from "@react-navigation/native";
 
 import { Colors } from "../../../styles/Colors";
 
@@ -30,7 +30,7 @@ export const HomeScreen = () => {
   const navigation = useNavigation();
 
   const goFlexPreview = () => {
-    navigation.navigate("FlexPreview");
+    navigation.navigate("FlexBox");
   };
   const goIcons = () => {
     navigation.navigate("Icons");
