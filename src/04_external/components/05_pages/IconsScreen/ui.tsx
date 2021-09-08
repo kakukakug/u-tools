@@ -5,6 +5,7 @@ import * as Clipboard from "expo-clipboard";
 
 import { Colors } from "../../../styles/Colors";
 import { Console } from "../../01_atoms/Console";
+import { PageTitle } from "../../01_atoms/PageTitle";
 import { FontFamilyItem } from "../../01_atoms/FontFamilyItem";
 import { IconItem } from "../../01_atoms/IconItem";
 
@@ -20,8 +21,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.background,
   },
-  title: { marginVertical: 20 },
-  titleText: { fontSize: 38, color: Colors.text },
   main: {
     flex: 1,
     flexDirection: "row",
@@ -92,21 +91,21 @@ export const IconsScreenUI = (props: OuterProps) => {
       setVisibleIccons(family, prop);
       setSearchText(prop);
     },
-    [family]
+    [family, setVisibleIccons]
   );
 
   const onPressFamily = useCallback(
-    (props) => {
+    (prop) => {
       setSelectIcon("");
-      setFamily(props);
-      setVisibleIccons(props, searchText);
+      setFamily(prop);
+      setVisibleIccons(prop, searchText);
     },
-    [searchText]
+    [searchText, setVisibleIccons]
   );
 
-  const onPressIcon = useCallback((props) => {
-    setSelectIcon(props);
-    Clipboard.setString(props);
+  const onPressIcon = useCallback((prop) => {
+    setSelectIcon(prop);
+    Clipboard.setString(prop);
     setIsVisible(true);
   }, []);
 
@@ -121,9 +120,7 @@ export const IconsScreenUI = (props: OuterProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <View style={styles.title}>
-          <Text style={styles.titleText}>@expo/vector-icons preview</Text>
-        </View>
+        <PageTitle title="@expo/vector-icons preview" />
         <View style={styles.main}>
           <View style={styles.sidebar}>
             <View style={styles.search}>

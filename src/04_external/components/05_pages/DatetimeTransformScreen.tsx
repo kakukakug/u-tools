@@ -43,7 +43,7 @@ class DatetimeTransformScreen extends React.Component {
     let valueNo = textArray.length;
 
     let re =
-      /([HSTMR]|平成|昭和|大正|明治|令和)?([0-9元]+)[年.\/]([0-9]+)[月.\/]([0-9]+)[日.]*/;
+      /([HSTMR]|平成|昭和|大正|明治|令和)?([0-9元]+)[年./]([0-9]+)[月./]([0-9]+)[日.]*/;
     let transformArray = textArray.map((text, index) => {
       text = text.replace(/[ 　]/g, "");
       text = text.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => {

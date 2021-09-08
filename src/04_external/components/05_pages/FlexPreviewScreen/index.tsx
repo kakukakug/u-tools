@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { ScrollView, StyleSheet, Text, View, Picker } from "react-native";
+import React, { useState, useEffect } from "react";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { Colors } from "../../../styles/Colors";
 import { Console } from "../../01_atoms/Console";
+import { PageTitle } from "../../01_atoms/PageTitle";
 
 import { styleTextFormat } from "../../../../01_entity/models/flex_style";
 
 import { PreviewComponent } from "./PreviewComponent";
+import { SettingComponent } from "./SettingComponent";
 
 const styles = StyleSheet.create({
   container: {
@@ -32,93 +34,13 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 400,
   },
-  customerContainer: {
-    flex: 3,
-    flexDirection: "row",
-    alignItems: "flex-start",
-  },
-
-  parentCustomer: {
-    flex: 1,
-    backgroundColor: Colors.surface,
-    paddingHorizontal: 4,
-    height: 300,
-  },
-  childCustomer: {
-    flex: 1,
-    backgroundColor: Colors.white,
-    paddingHorizontal: 4,
-    borderWidth: 1,
-    borderColor: Colors.icon,
-    height: 300,
-  },
-
-  child2: {
-    color: Colors.notification,
-  },
-  flexRow: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    paddingHorizontal: 4,
-  },
-
   subTitleText: {
     fontSize: 26,
     color: Colors.icon,
     textAlign: "center",
     paddingTop: 6,
   },
-  h1Text: {
-    fontSize: 20,
-    color: Colors.text,
-    textAlign: "center",
-    paddingTop: 6,
-  },
-  h2Text: {
-    fontSize: 16,
-    color: Colors.text,
-    textAlign: "center",
-    paddingTop: 10,
-  },
-  stylePropText: {
-    fontSize: 14,
-    color: "rgba(96,100,109, 1)",
-    textAlign: "center",
-    paddingHorizontal: 6,
-    paddingVertical: 4,
-  },
-
-  picker: {
-    height: 20,
-    width: 60,
-    borderRadius: 4,
-  },
-  pickerItem: {},
-
-  title: { marginVertical: 10 },
-  titleText: { fontSize: 38, color: Colors.text },
 });
-
-const SettingComponent = (data) => {
-  const { name, value, onValueChange, selectionArray } = data;
-  return (
-    <View style={styles.flexRow}>
-      <Text style={styles.stylePropText}>{name}</Text>
-      <Picker
-        selectedValue={value}
-        style={styles.picker}
-        itemStyle={styles.pickerItem}
-        onValueChange={(itemValue) => {
-          onValueChange(itemValue);
-        }}>
-        {selectionArray.map((label, index) => {
-          return <Picker.Item label={label} value={label} key={index} />;
-        })}
-      </Picker>
-    </View>
-  );
-};
 
 export const FlexPreviewScreen = () => {
   const [flexDirection, setFlexDirection] = useState("none");
@@ -133,127 +55,6 @@ export const FlexPreviewScreen = () => {
   const [flexShrink, setFlexShrink] = useState("none");
   const [flexBasis, setFlexBasis] = useState("none");
   const [styleText, setStyleText] = useState("");
-
-  const CustomerContainer = () => {
-    return (
-      <View style={styles.customerContainer}>
-        <View style={styles.parentCustomer}>
-          <Text style={styles.h1Text}>Parent</Text>
-          <SettingComponent
-            name={"flexDirection"}
-            value={flexDirection}
-            onValueChange={setFlexDirection}
-            selectionArray={[
-              "none",
-              "column",
-              "row",
-              "column-reverse",
-              "row-reverse",
-            ]}
-          />
-          <SettingComponent
-            name={"justifyContent"}
-            value={justifyContent}
-            onValueChange={setJustifyContent}
-            selectionArray={[
-              "none",
-              "flex-start",
-              "center",
-              "flex-end",
-              "space-around",
-              "space-between",
-              "space-evenly",
-            ]}
-          />
-          <SettingComponent
-            name={"alignItems"}
-            value={alignItems}
-            onValueChange={setAlignItems}
-            selectionArray={[
-              "none",
-              "flex-start",
-              "center",
-              "flex-end",
-              "stretch",
-            ]}
-          />
-          <SettingComponent
-            name={"flexWrap"}
-            value={flexWrap}
-            onValueChange={setFlexWrap}
-            selectionArray={["none", "nowrap", "wrap", "wrap-reverse"]}
-          />
-          <SettingComponent
-            name={"alignContent"}
-            value={alignContent}
-            onValueChange={setAlignContent}
-            selectionArray={[
-              "none",
-              "flex-start",
-              "flex-end",
-              "center",
-              "stretch",
-              "space-between",
-              "space-around",
-            ]}
-          />
-        </View>
-        <View style={styles.childCustomer}>
-          <Text style={styles.h1Text}>Children</Text>
-          <SettingComponent
-            name={"text"}
-            value={text}
-            onValueChange={setText}
-            selectionArray={[
-              "child",
-              "long text. mega super long text contents",
-            ]}
-          />
-          <SettingComponent
-            name={"flex"}
-            value={flex}
-            onValueChange={setFlex}
-            selectionArray={["none", "1", "2"]}
-          />
-          <Text style={styles.h2Text}>
-            only <Text style={styles.child2}>child-2</Text> style prop
-          </Text>
-          <SettingComponent
-            name={"flexGrow"}
-            value={flexGrow}
-            onValueChange={setFlexGrow}
-            selectionArray={["none", "0", "1", "2", "3"]}
-          />
-          <SettingComponent
-            name={"flexShrink"}
-            value={flexShrink}
-            onValueChange={setFlexShrink}
-            selectionArray={["none", "1", "2", "3"]}
-          />
-          <SettingComponent
-            name={"flexBasis"}
-            value={flexBasis}
-            onValueChange={setFlexBasis}
-            selectionArray={["none", "auto", "10", "20", "30"]}
-          />
-          <SettingComponent
-            name={"alignSelf"}
-            value={alignSelf}
-            onValueChange={setAlignSelf}
-            selectionArray={[
-              "none",
-              "auto",
-              "flex-start",
-              "flex-end",
-              "center",
-              "stretch",
-              "baseline",
-            ]}
-          />
-        </View>
-      </View>
-    );
-  };
 
   useEffect(() => {
     const parent = styleTextFormat({
@@ -290,7 +91,6 @@ ${child2}  },`);
     flexShrink,
     flexBasis,
     alignSelf,
-    styleTextFormat,
   ]);
 
   return (
@@ -298,15 +98,34 @@ ${child2}  },`);
       <ScrollView
         style={styles.scrollContainer}
         contentContainerStyle={styles.contentContainer}>
-        <View style={styles.title}>
-          <Text style={styles.titleText}>
-            React Native FlexBox Style Creator
-          </Text>
-        </View>
+        <PageTitle title="React Native FlexBox Style Creator" />
         <View style={styles.main}>
           <View style={styles.settingContainer}>
             <Text style={styles.subTitleText}>Property selecter</Text>
-            <CustomerContainer />
+            <SettingComponent
+              flexDirection={flexDirection}
+              justifyContent={justifyContent}
+              alignItems={alignItems}
+              flexWrap={flexWrap}
+              alignContent={alignContent}
+              flex={flex}
+              flexGrow={flexGrow}
+              flexShrink={flexShrink}
+              flexBasis={flexBasis}
+              alignSelf={alignSelf}
+              text={text}
+              setFlexDirection={setFlexDirection}
+              setJustifyContent={setJustifyContent}
+              setAlignItems={setAlignItems}
+              setFlexWrap={setFlexWrap}
+              setAlignContent={setAlignContent}
+              setFlex={setFlex}
+              setFlexGrow={setFlexGrow}
+              setFlexShrink={setFlexShrink}
+              setFlexBasis={setFlexBasis}
+              setAlignSelf={setAlignSelf}
+              setText={setText}
+            />
           </View>
           <View style={styles.previewContainer}>
             <Text style={styles.subTitleText}>Preview</Text>

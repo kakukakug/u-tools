@@ -16,9 +16,6 @@ const styles = StyleSheet.create({
     borderColor: Colors.icon,
     padding: 2,
   },
-  child2: {
-    color: Colors.notification,
-  },
   previewText: {
     color: Colors.text,
   },

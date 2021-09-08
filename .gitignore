@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 node_modules/**/*
 .expo/*
 npm-debug.*
@@ -13,3 +12,6 @@ web-report/
 
 # macOS
 .DS_Store
+
+# jest
+coverage

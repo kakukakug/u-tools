@@ -30,7 +30,7 @@ export const HomeScreen = () => {
   const navigation = useNavigation();
 
   const goFlexPreview = () => {
-    navigation.navigate("FlexPreview");
+    navigation.navigate("FlexBox");
   };
   const goIcons = () => {
     navigation.navigate("Icons");

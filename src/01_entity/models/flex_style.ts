@@ -1,4 +1,4 @@
-export const createStyle = (propObj) => {
+export const createStyle = (propObj: Object) => {
   let style = {};
   for (var key in propObj) {
     if (propObj[key] !== "none") {
@@ -14,7 +14,7 @@ export const createStyle = (propObj) => {
   return style;
 };
 
-export const styleTextFormat = (obj) => {
+export const styleTextFormat = (obj: Object) => {
   let styleObj = createStyle(obj);
   let ret = "";
   for (var key in styleObj) {
@@ -26,4 +26,3 @@ export const styleTextFormat = (obj) => {
   }
   return ret;
 };
-

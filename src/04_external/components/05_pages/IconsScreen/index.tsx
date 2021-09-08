@@ -9,7 +9,7 @@ export const IconsScreen = () => {
 
   useEffect(() => {
     setVisibleIccons("AntDesign", "");
-  }, []);
+  }, [setVisibleIccons]);
 
   const setVisibleIccons = useCallback(
     (selectFamily, searchText) => {
