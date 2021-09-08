@@ -67,7 +67,7 @@ export const Icons = {
   Fontisto,
 };
 
-export const iconSearch = (selectFamily, selectSearch) => {
+export const iconSearch = (selectFamily: string, selectSearch: string) => {
   const tempIcons = Icons[selectFamily];
 
   if (selectSearch === "") {
@@ -78,4 +78,4 @@ export const iconSearch = (selectFamily, selectSearch) => {
     return re.test(icon);
   });
   return filterdIcons;
-}
+};

@@ -1,0 +1,1057 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PreviewComponent PreviewComponentを描写 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#ccc",
+        "flex": 1,
+        "padding": 10,
+      },
+      Object {
+        "alignContent": "test",
+        "alignItems": "test",
+        "flexDirection": "test",
+        "flexWrap": "test",
+        "justifyContent": "test",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fffffe",
+          "borderColor": "#666",
+          "borderWidth": 1,
+          "padding": 2,
+        },
+        Object {
+          "flex": NaN,
+        },
+        Object {},
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#333",
+          },
+          Object {},
+        ]
+      }
+    >
+      test
+      -
+      1
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fffffe",
+          "borderColor": "#666",
+          "borderWidth": 1,
+          "padding": 2,
+        },
+        Object {
+          "flex": NaN,
+        },
+        Object {
+          "alignSelf": "test",
+          "flexBasis": NaN,
+          "flexGrow": NaN,
+          "flexShrink": NaN,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#333",
+          },
+          Object {
+            "color": "#e77",
+          },
+        ]
+      }
+    >
+      test
+      -
+      2
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fffffe",
+          "borderColor": "#666",
+          "borderWidth": 1,
+          "padding": 2,
+        },
+        Object {
+          "flex": NaN,
+        },
+        Object {},
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#333",
+          },
+          Object {},
+        ]
+      }
+    >
+      test
+      -
+      3
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fffffe",
+          "borderColor": "#666",
+          "borderWidth": 1,
+          "padding": 2,
+        },
+        Object {
+          "flex": NaN,
+        },
+        Object {},
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#333",
+          },
+          Object {},
+        ]
+      }
+    >
+      test
+      -
+      4
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`SettingComponent SettingComponentを描写 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-start",
+      "flex": 3,
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#ccc",
+        "flex": 1,
+        "height": 300,
+        "paddingHorizontal": 4,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#333",
+          "fontSize": 20,
+          "paddingTop": 6,
+          "textAlign": "center",
+        }
+      }
+    >
+      Parent
+    </Text>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        flexDirection
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "column",
+                "textColor": undefined,
+                "value": "column",
+              },
+              Object {
+                "label": "row",
+                "textColor": undefined,
+                "value": "row",
+              },
+              Object {
+                "label": "column-reverse",
+                "textColor": undefined,
+                "value": "column-reverse",
+              },
+              Object {
+                "label": "row-reverse",
+                "textColor": undefined,
+                "value": "row-reverse",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        justifyContent
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "flex-start",
+                "textColor": undefined,
+                "value": "flex-start",
+              },
+              Object {
+                "label": "center",
+                "textColor": undefined,
+                "value": "center",
+              },
+              Object {
+                "label": "flex-end",
+                "textColor": undefined,
+                "value": "flex-end",
+              },
+              Object {
+                "label": "space-around",
+                "textColor": undefined,
+                "value": "space-around",
+              },
+              Object {
+                "label": "space-between",
+                "textColor": undefined,
+                "value": "space-between",
+              },
+              Object {
+                "label": "space-evenly",
+                "textColor": undefined,
+                "value": "space-evenly",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        alignItems
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "flex-start",
+                "textColor": undefined,
+                "value": "flex-start",
+              },
+              Object {
+                "label": "center",
+                "textColor": undefined,
+                "value": "center",
+              },
+              Object {
+                "label": "flex-end",
+                "textColor": undefined,
+                "value": "flex-end",
+              },
+              Object {
+                "label": "stretch",
+                "textColor": undefined,
+                "value": "stretch",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        flexWrap
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "nowrap",
+                "textColor": undefined,
+                "value": "nowrap",
+              },
+              Object {
+                "label": "wrap",
+                "textColor": undefined,
+                "value": "wrap",
+              },
+              Object {
+                "label": "wrap-reverse",
+                "textColor": undefined,
+                "value": "wrap-reverse",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        alignContent
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "flex-start",
+                "textColor": undefined,
+                "value": "flex-start",
+              },
+              Object {
+                "label": "flex-end",
+                "textColor": undefined,
+                "value": "flex-end",
+              },
+              Object {
+                "label": "center",
+                "textColor": undefined,
+                "value": "center",
+              },
+              Object {
+                "label": "stretch",
+                "textColor": undefined,
+                "value": "stretch",
+              },
+              Object {
+                "label": "space-between",
+                "textColor": undefined,
+                "value": "space-between",
+              },
+              Object {
+                "label": "space-around",
+                "textColor": undefined,
+                "value": "space-around",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fffffe",
+        "borderColor": "#666",
+        "borderWidth": 1,
+        "flex": 1,
+        "height": 300,
+        "paddingHorizontal": 4,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#333",
+          "fontSize": 20,
+          "paddingTop": 6,
+          "textAlign": "center",
+        }
+      }
+    >
+      Children
+    </Text>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        text
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "child",
+                "textColor": undefined,
+                "value": "child",
+              },
+              Object {
+                "label": "long text. mega super long text contents",
+                "textColor": undefined,
+                "value": "long text. mega super long text contents",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        flex
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "1",
+                "textColor": undefined,
+                "value": "1",
+              },
+              Object {
+                "label": "2",
+                "textColor": undefined,
+                "value": "2",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "#333",
+          "fontSize": 16,
+          "paddingTop": 10,
+          "textAlign": "center",
+        }
+      }
+    >
+      only 
+      <Text
+        style={
+          Object {
+            "color": "#e77",
+          }
+        }
+      >
+        child-2
+      </Text>
+       style prop
+    </Text>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        flexGrow
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "0",
+                "textColor": undefined,
+                "value": "0",
+              },
+              Object {
+                "label": "1",
+                "textColor": undefined,
+                "value": "1",
+              },
+              Object {
+                "label": "2",
+                "textColor": undefined,
+                "value": "2",
+              },
+              Object {
+                "label": "3",
+                "textColor": undefined,
+                "value": "3",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        flexShrink
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "1",
+                "textColor": undefined,
+                "value": "1",
+              },
+              Object {
+                "label": "2",
+                "textColor": undefined,
+                "value": "2",
+              },
+              Object {
+                "label": "3",
+                "textColor": undefined,
+                "value": "3",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        flexBasis
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "auto",
+                "textColor": undefined,
+                "value": "auto",
+              },
+              Object {
+                "label": "10",
+                "textColor": undefined,
+                "value": "10",
+              },
+              Object {
+                "label": "20",
+                "textColor": undefined,
+                "value": "20",
+              },
+              Object {
+                "label": "30",
+                "textColor": undefined,
+                "value": "30",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(96,100,109, 1)",
+            "fontSize": 14,
+            "paddingHorizontal": 6,
+            "paddingVertical": 4,
+            "textAlign": "center",
+          }
+        }
+      >
+        alignSelf
+      </Text>
+      <View
+        style={
+          Object {
+            "borderRadius": 4,
+            "height": 20,
+            "width": 60,
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "none",
+                "textColor": undefined,
+                "value": "none",
+              },
+              Object {
+                "label": "auto",
+                "textColor": undefined,
+                "value": "auto",
+              },
+              Object {
+                "label": "flex-start",
+                "textColor": undefined,
+                "value": "flex-start",
+              },
+              Object {
+                "label": "flex-end",
+                "textColor": undefined,
+                "value": "flex-end",
+              },
+              Object {
+                "label": "center",
+                "textColor": undefined,
+                "value": "center",
+              },
+              Object {
+                "label": "stretch",
+                "textColor": undefined,
+                "value": "stretch",
+              },
+              Object {
+                "label": "baseline",
+                "textColor": undefined,
+                "value": "baseline",
+              },
+            ]
+          }
+          onChange={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;

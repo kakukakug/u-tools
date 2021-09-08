@@ -91,7 +91,6 @@ ${child2}  },`);
     flexShrink,
     flexBasis,
     alignSelf,
-    styleTextFormat,
   ]);
 
   return (

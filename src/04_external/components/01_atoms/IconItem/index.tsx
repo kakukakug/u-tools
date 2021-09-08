@@ -46,7 +46,6 @@ const iconSize = 42;
 
 export const IconItem = (props: OuterProps) => {
   const { name, onPress, selectFamily } = props;
-  console.log("render icon")
   const getIconConponrnt = () => {
     switch (selectFamily) {
       case "AntDesign":

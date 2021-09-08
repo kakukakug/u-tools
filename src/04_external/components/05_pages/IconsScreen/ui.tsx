@@ -91,21 +91,21 @@ export const IconsScreenUI = (props: OuterProps) => {
       setVisibleIccons(family, prop);
       setSearchText(prop);
     },
-    [family]
+    [family, setVisibleIccons]
   );
 
   const onPressFamily = useCallback(
-    (props) => {
+    (prop) => {
       setSelectIcon("");
-      setFamily(props);
-      setVisibleIccons(props, searchText);
+      setFamily(prop);
+      setVisibleIccons(prop, searchText);
     },
-    [searchText]
+    [searchText, setVisibleIccons]
   );
 
-  const onPressIcon = useCallback((props) => {
-    setSelectIcon(props);
-    Clipboard.setString(props);
+  const onPressIcon = useCallback((prop) => {
+    setSelectIcon(prop);
+    Clipboard.setString(prop);
     setIsVisible(true);
   }, []);
 

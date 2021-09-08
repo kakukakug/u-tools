@@ -69,7 +69,7 @@ type PickerProps = {
   onValueChange: (prop: string) => void;
   selectionArray: string[];
 };
-const SettingPicker = (data:PickerProps) => {
+const SettingPicker = (data: PickerProps) => {
   const { name, value, onValueChange, selectionArray } = data;
   return (
     <View style={styles.flexRow}>

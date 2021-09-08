@@ -11,10 +11,11 @@ https://github.com/kakukakug
 <img width="1231" alt="スクリーンショット 2021-09-07 10 55 51" src="https://user-images.githubusercontent.com/17676047/132448956-6ac2170a-58a4-4be7-8ef4-544d329b2412.png">
 
 @expo/vector-icons のアイコンを探せます。
+
 アイコンセットのファミリーを選択して表示できることと、アイコン名で絞り込みができます。
 コピーできるようにコードも表示しています。
 
-@expo/vector-icons は react-native-vector-icons を使っているので、基本的にはここで見つけたアイコンは react-native-vector-icons で同じアイコンを利用できます。
+@expo/vector-icons は react-native-vector-icons を使っているので、基本的にはここで見つけたアイコンは react-native-vector-icons で同じアイコンを利用できます。  
 ただ、使用しているアイコンセットのバージョンが異なるため、利用できないアイコンがあります。あくまで参考までにご確認ください。
 
 
@@ -28,6 +29,11 @@ React Native Webを用いることで、アプリでFlexBoxを指定した時の
 
 コピーできるようにスタイルのコードも表示しています。
 
+## Reference
+https://github.com/expo/vector-icons
+https://github.com/oblador/react-native-vector-icons
+
+https://icons.expo.fyi/
 
 ## License
 

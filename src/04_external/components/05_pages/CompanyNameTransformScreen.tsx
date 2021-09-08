@@ -33,14 +33,14 @@ class CompanyNameTransformScreen extends React.Component {
         error = error + (index + 1) + ",";
         return "";
       }
-      text = text.replace(/(.*)[\(（]株[\)）](.*)/, "$1株式会社$2");
+      text = text.replace(/(.*)[(（]株[)）](.*)/, "$1株式会社$2");
       text = text.replace("㈱", "株式会社");
 
-      text = text.replace(/(.*)[\(（]有[\)）](.*)/, "$1有限会社$2");
+      text = text.replace(/(.*)[(（]有[)）](.*)/, "$1有限会社$2");
       text = text.replace("㈲", "有限会社");
 
-      text = text.replace(/(.*)[\(（][合同][\)）](.*)/, "$1合同会社$2");
-      text = text.replace(/(.*)[\(（]資[\)）](.*)/, "$1合資会社$2");
+      text = text.replace(/(.*)[(（][合同][)）](.*)/, "$1合同会社$2");
+      text = text.replace(/(.*)[(（]資[)）](.*)/, "$1合資会社$2");
 
       text = text.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => {
         return String.fromCharCode(s.charCodeAt(0) - 0xfee0);
