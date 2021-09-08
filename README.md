@@ -31,6 +31,7 @@ React Native Webを用いることで、アプリでFlexBoxを指定した時の
 
 ## Reference
 https://github.com/expo/vector-icons
+
 https://github.com/oblador/react-native-vector-icons
 
 https://icons.expo.fyi/
