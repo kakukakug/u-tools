@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import { iconSearch } from "../../../../01_entity/models/vector_icons";
 
-import { IconsScreenUI } from "./UI";
+import { IconsScreenUI } from "./ui";
 
 export const IconsScreen = () => {
   const [icons, setIcons] = useState([]);
