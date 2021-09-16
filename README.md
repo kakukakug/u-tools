@@ -18,6 +18,15 @@ https://github.com/kakukakug
 @expo/vector-icons は react-native-vector-icons を使っているので、基本的にはここで見つけたアイコンは react-native-vector-icons で同じアイコンを利用できます。  
 ただ、使用しているアイコンセットのバージョンが異なるため、利用できないアイコンがあります。あくまで参考までにご確認ください。
 
+## React Native Shadow Simulator 
+
+React Native での 影のスタイルをいろいろ試すことができます。
+iOS と Android で指定する属性が異なるので、その部分が簡単に確認できたらいいなと思い作成しました。
+
+React Native Webを用いることで、アプリでFlexBoxを指定した時の挙動を再現してます。
+実際の端末で確認した時と表示が少し異なることがあるはずなので、実機でも確認を行ってください。
+
+コピーできるようにスタイルのコードも表示しています。
 
 ## React Native FlexBox Style Creator
 <img width="874" alt="スクリーンショット 2021-09-07 10 56 12" src="https://user-images.githubusercontent.com/17676047/132448887-823210a6-7c7a-4a93-8bdd-f168c9e5f7e5.png">

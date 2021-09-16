@@ -35,6 +35,9 @@ export const HomeScreen = () => {
   const goIcons = () => {
     navigation.navigate("Icons");
   };
+  const goShadowStyle= () => {
+    navigation.navigate("Shadow");
+  };
   return (
     <View style={styles.container}>
       <View style={styles.title}>
@@ -50,6 +53,15 @@ export const HomeScreen = () => {
             mode="outlined"
             style={styles.linkButton}>
             <Text style={styles.buttonText}>@expo/vector-icons Preview</Text>
+          </Button>
+          <Button
+            uppercase={false}
+            onPress={goShadowStyle}
+            mode="outlined"
+            style={styles.linkButton}>
+            <Text style={styles.buttonText}>
+              React Native Shadow Simulator
+            </Text>
           </Button>
           <Button
             uppercase={false}
