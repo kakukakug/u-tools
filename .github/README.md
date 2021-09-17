@@ -8,7 +8,7 @@ https://honmushi-u-tools.netlify.app/
 https://github.com/kakukakug
 
 ## @expo/vector-icons preview
-<img width="1231" alt="スクリーンショット 2021-09-07 10 55 51" src="https://user-images.githubusercontent.com/17676047/132448956-6ac2170a-58a4-4be7-8ef4-544d329b2412.png">
+![vector-icons preview](./expo-icons.png)
 
 @expo/vector-icons のアイコンを探せます。
 
@@ -19,6 +19,7 @@ https://github.com/kakukakug
 ただ、使用しているアイコンセットのバージョンが異なるため、利用できないアイコンがあります。あくまで参考までにご確認ください。
 
 ## React Native Shadow Simulator 
+![React Native Shadow Simulator](./shadow-simulator.png)
 
 React Native での 影のスタイルをいろいろ試すことができます。
 iOS と Android で指定する属性が異なるので、その部分が簡単に確認できたらいいなと思い作成しました。
@@ -29,7 +30,7 @@ React Native Webを用いることで、アプリでFlexBoxを指定した時の
 コピーできるようにスタイルのコードも表示しています。
 
 ## React Native FlexBox Style Creator
-<img width="874" alt="スクリーンショット 2021-09-07 10 56 12" src="https://user-images.githubusercontent.com/17676047/132448887-823210a6-7c7a-4a93-8bdd-f168c9e5f7e5.png">
+![React Native FlexBox Style Creator](./flexbox-style.png)
 
 React Native での FlexBox のスタイルをいろいろ試すことができます。
 React Native Webを用いることで、アプリでFlexBoxを指定した時の挙動を再現してます。
