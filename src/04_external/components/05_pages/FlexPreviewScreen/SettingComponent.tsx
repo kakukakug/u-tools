@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, Picker } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { Picker } from "@react-native-picker/picker";
 
 import { Colors } from "../../../styles/Colors";
 
@@ -78,6 +79,7 @@ const SettingPicker = (data: PickerProps) => {
         selectedValue={value}
         style={styles.picker}
         itemStyle={styles.pickerItem}
+        testID={name}
         onValueChange={(itemValue) => {
           onValueChange(itemValue);
         }}>

@@ -217,31 +217,36 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "column",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "column",
               },
               Object {
                 "label": "row",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "row",
               },
               Object {
                 "label": "column-reverse",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "column-reverse",
               },
               Object {
                 "label": "row-reverse",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "row-reverse",
               },
@@ -257,6 +262,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="flexDirection"
         />
       </View>
     </View>
@@ -292,41 +298,48 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "flex-start",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "flex-start",
               },
               Object {
                 "label": "center",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "center",
               },
               Object {
                 "label": "flex-end",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "flex-end",
               },
               Object {
                 "label": "space-around",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "space-around",
               },
               Object {
                 "label": "space-between",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "space-between",
               },
               Object {
                 "label": "space-evenly",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "space-evenly",
               },
@@ -342,6 +355,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="justifyContent"
         />
       </View>
     </View>
@@ -377,31 +391,36 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "flex-start",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "flex-start",
               },
               Object {
                 "label": "center",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "center",
               },
               Object {
                 "label": "flex-end",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "flex-end",
               },
               Object {
                 "label": "stretch",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "stretch",
               },
@@ -417,6 +436,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="alignItems"
         />
       </View>
     </View>
@@ -452,26 +472,30 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "nowrap",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "nowrap",
               },
               Object {
                 "label": "wrap",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "wrap",
               },
               Object {
                 "label": "wrap-reverse",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "wrap-reverse",
               },
@@ -487,6 +511,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="flexWrap"
         />
       </View>
     </View>
@@ -522,41 +547,48 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "flex-start",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "flex-start",
               },
               Object {
                 "label": "flex-end",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "flex-end",
               },
               Object {
                 "label": "center",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "center",
               },
               Object {
                 "label": "stretch",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "stretch",
               },
               Object {
                 "label": "space-between",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "space-between",
               },
               Object {
                 "label": "space-around",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "space-around",
               },
@@ -572,6 +604,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="alignContent"
         />
       </View>
     </View>
@@ -632,16 +665,18 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "child",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "child",
               },
               Object {
                 "label": "long text. mega super long text contents",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "long text. mega super long text contents",
               },
@@ -657,6 +692,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="text"
         />
       </View>
     </View>
@@ -692,21 +728,24 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "1",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "1",
               },
               Object {
                 "label": "2",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "2",
               },
@@ -722,6 +761,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="flex"
         />
       </View>
     </View>
@@ -779,31 +819,36 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "0",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "0",
               },
               Object {
                 "label": "1",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "1",
               },
               Object {
                 "label": "2",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "2",
               },
               Object {
                 "label": "3",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "3",
               },
@@ -819,6 +864,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="flexGrow"
         />
       </View>
     </View>
@@ -854,26 +900,30 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "1",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "1",
               },
               Object {
                 "label": "2",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "2",
               },
               Object {
                 "label": "3",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "3",
               },
@@ -889,6 +939,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="flexShrink"
         />
       </View>
     </View>
@@ -924,31 +975,36 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "auto",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "auto",
               },
               Object {
                 "label": "10",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "10",
               },
               Object {
                 "label": "20",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "20",
               },
               Object {
                 "label": "30",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "30",
               },
@@ -964,6 +1020,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="flexBasis"
         />
       </View>
     </View>
@@ -999,41 +1056,48 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
           }
         }
       >
-        <RCTPicker
+        <RNCPicker
           items={
             Array [
               Object {
                 "label": "none",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "none",
               },
               Object {
                 "label": "auto",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "auto",
               },
               Object {
                 "label": "flex-start",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "flex-start",
               },
               Object {
                 "label": "flex-end",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "flex-end",
               },
               Object {
                 "label": "center",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "center",
               },
               Object {
                 "label": "stretch",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "stretch",
               },
               Object {
                 "label": "baseline",
+                "testID": undefined,
                 "textColor": undefined,
                 "value": "baseline",
               },
@@ -1049,6 +1113,7 @@ exports[`SettingComponent SettingComponentを描写 1`] = `
               Object {},
             ]
           }
+          testID="alignSelf"
         />
       </View>
     </View>

@@ -45,6 +45,10 @@ https://github.com/oblador/react-native-vector-icons
 
 https://icons.expo.fyi/
 
+https://reactnative.dev/docs/view-style-props#elevation-android
+
+https://reactnative.dev/docs/view-style-props#elevation
+
 ## License
 
 This is licenced under the [MIT License](http://opensource.org/licenses/mit-license.html).

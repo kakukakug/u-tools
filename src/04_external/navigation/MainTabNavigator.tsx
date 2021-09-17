@@ -40,7 +40,6 @@ function ReactNativeStack() {
   };
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Shadow" component={ShadowStyleScreen} />
       <Stack.Screen
         name="ReactNativeDrawer"
         component={HomeDrawer}
@@ -48,6 +47,7 @@ function ReactNativeStack() {
       />
       <Stack.Screen name="Icons" component={IconsScreen} />
       <Stack.Screen name="FlexBox" component={FlexPreviewScreen} />
+      <Stack.Screen name="Shadow" component={ShadowStyleScreen} />
       <Stack.Screen
         name="Date"
         component={DatetimeTransformScreen}

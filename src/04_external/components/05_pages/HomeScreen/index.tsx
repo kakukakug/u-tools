@@ -35,7 +35,7 @@ export const HomeScreen = () => {
   const goIcons = () => {
     navigation.navigate("Icons");
   };
-  const goShadowStyle= () => {
+  const goShadowStyle = () => {
     navigation.navigate("Shadow");
   };
   return (
@@ -59,9 +59,7 @@ export const HomeScreen = () => {
             onPress={goShadowStyle}
             mode="outlined"
             style={styles.linkButton}>
-            <Text style={styles.buttonText}>
-              React Native Shadow Simulator
-            </Text>
+            <Text style={styles.buttonText}>React Native Shadow Simulator</Text>
           </Button>
           <Button
             uppercase={false}
