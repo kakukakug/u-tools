@@ -1,0 +1,526 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShadowStyleScreen ShadowStyleScreenを描写 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fffff9",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+      }
+    }
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "marginVertical": 10,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#333",
+              "fontSize": 38,
+            }
+          }
+        >
+          React Native Shadow Simulator
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ccc",
+              "padding": 10,
+              "width": 400,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#333",
+                "fontSize": 26,
+                "paddingTop": 6,
+                "textAlign": "center",
+              }
+            }
+          >
+            setting
+          </Text>
+          <View>
+            <Text
+              style={
+                Object {
+                  "color": "#333",
+                  "fontSize": 22,
+                  "marginTop": 16,
+                  "paddingVertical": 6,
+                }
+              }
+            >
+              ios
+            </Text>
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#fffffe",
+                  "borderRadius": 4,
+                  "margin": 4,
+                  "padding": 10,
+                }
+              }
+            >
+              <Text>
+                shadowColor
+              </Text>
+              <TextInput
+                allowFontScaling={true}
+                onChangeText={[Function]}
+                placeholder="#333"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "backgroundColor": "#fffffe",
+                    "borderColor": "#ccc",
+                    "borderRadius": 4,
+                    "borderWidth": 2,
+                    "marginTop": 4,
+                    "padding": 4,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value="#333"
+              />
+            </View>
+            <View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#fffffe",
+                    "borderRadius": 4,
+                    "margin": 4,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#333",
+                      "fontSize": 16,
+                      "marginBottom": 4,
+                      "marginTop": 2,
+                    }
+                  }
+                >
+                  shadowOffset-width
+                  <Text
+                    style={
+                      Object {
+                        "color": "#666",
+                        "fontSize": 16,
+                        "marginLeft": 10,
+                      }
+                    }
+                  >
+                    { width: 8, height: 8 }
+                  </Text>
+                </Text>
+                <RNCSlider
+                  disabled={false}
+                  enabled={true}
+                  inverted={false}
+                  maximumTrackTintColor="#333"
+                  maximumValue={50}
+                  minimumTrackTintColor="#ccc"
+                  minimumValue={-50}
+                  onChange={[Function]}
+                  onRNCSliderSlidingComplete={null}
+                  onRNCSliderSlidingStart={null}
+                  onRNCSliderValueChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  step={1}
+                  style={
+                    Object {
+                      "height": 40,
+                    }
+                  }
+                  thumbImage={
+                    Object {
+                      "__packager_asset": true,
+                      "height": 1,
+                      "scale": 1,
+                      "uri": "file://assets/full/path/to/directory/name.type",
+                      "width": 1,
+                    }
+                  }
+                  value={8}
+                />
+                <Text
+                  style={
+                    Object {
+                      "color": "#333",
+                      "fontSize": 16,
+                      "marginBottom": 4,
+                      "marginTop": 2,
+                    }
+                  }
+                >
+                  shadowOffset-height
+                </Text>
+                <RNCSlider
+                  disabled={false}
+                  enabled={true}
+                  inverted={false}
+                  maximumTrackTintColor="#333"
+                  maximumValue={50}
+                  minimumTrackTintColor="#ccc"
+                  minimumValue={-50}
+                  onChange={[Function]}
+                  onRNCSliderSlidingComplete={null}
+                  onRNCSliderSlidingStart={null}
+                  onRNCSliderValueChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  step={1}
+                  style={
+                    Object {
+                      "height": 40,
+                    }
+                  }
+                  thumbImage={
+                    Object {
+                      "__packager_asset": true,
+                      "height": 1,
+                      "scale": 1,
+                      "uri": "file://assets/full/path/to/directory/name.type",
+                      "width": 1,
+                    }
+                  }
+                  value={8}
+                />
+              </View>
+            </View>
+            <View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#fffffe",
+                    "borderRadius": 4,
+                    "margin": 4,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#333",
+                      "fontSize": 16,
+                      "marginBottom": 4,
+                      "marginTop": 2,
+                    }
+                  }
+                >
+                  shadowOpacity
+                  <Text
+                    style={
+                      Object {
+                        "color": "#666",
+                        "fontSize": 16,
+                        "marginLeft": 10,
+                      }
+                    }
+                  >
+                    1
+                  </Text>
+                </Text>
+                <RNCSlider
+                  disabled={false}
+                  enabled={true}
+                  inverted={false}
+                  maximumTrackTintColor="#333"
+                  maximumValue={1}
+                  minimumTrackTintColor="#ccc"
+                  minimumValue={0}
+                  onChange={[Function]}
+                  onRNCSliderSlidingComplete={null}
+                  onRNCSliderSlidingStart={null}
+                  onRNCSliderValueChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  step={0.01}
+                  style={
+                    Object {
+                      "height": 40,
+                    }
+                  }
+                  thumbImage={
+                    Object {
+                      "__packager_asset": true,
+                      "height": 1,
+                      "scale": 1,
+                      "uri": "file://assets/full/path/to/directory/name.type",
+                      "width": 1,
+                    }
+                  }
+                  value={1}
+                />
+              </View>
+            </View>
+            <View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#fffffe",
+                    "borderRadius": 4,
+                    "margin": 4,
+                    "padding": 10,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#333",
+                      "fontSize": 16,
+                      "marginBottom": 4,
+                      "marginTop": 2,
+                    }
+                  }
+                >
+                  shadowRadius
+                  <Text
+                    style={
+                      Object {
+                        "color": "#666",
+                        "fontSize": 16,
+                        "marginLeft": 10,
+                      }
+                    }
+                  >
+                    0
+                  </Text>
+                </Text>
+                <RNCSlider
+                  disabled={false}
+                  enabled={true}
+                  inverted={false}
+                  maximumTrackTintColor="#333"
+                  maximumValue={50}
+                  minimumTrackTintColor="#ccc"
+                  minimumValue={0}
+                  onChange={[Function]}
+                  onRNCSliderSlidingComplete={null}
+                  onRNCSliderSlidingStart={null}
+                  onRNCSliderValueChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  step={1}
+                  style={
+                    Object {
+                      "height": 40,
+                    }
+                  }
+                  thumbImage={
+                    Object {
+                      "__packager_asset": true,
+                      "height": 1,
+                      "scale": 1,
+                      "uri": "file://assets/full/path/to/directory/name.type",
+                      "width": 1,
+                    }
+                  }
+                  value={0}
+                />
+              </View>
+            </View>
+          </View>
+          <View>
+            <Text
+              style={
+                Object {
+                  "color": "#333",
+                  "fontSize": 22,
+                  "marginTop": 16,
+                  "paddingVertical": 6,
+                }
+              }
+            >
+              android
+            </Text>
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#fffffe",
+                  "borderRadius": 4,
+                  "margin": 4,
+                  "padding": 10,
+                }
+              }
+            >
+              <Text>
+                android の場合は elevation で指定します。
+Webでは再現できなかったので表示していません。
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#fffffe",
+              "padding": 10,
+              "width": 400,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#333",
+                "fontSize": 26,
+                "paddingTop": 6,
+                "textAlign": "center",
+              }
+            }
+          >
+            preview
+          </Text>
+          <View>
+            <Text
+              style={
+                Object {
+                  "color": "#333",
+                  "fontSize": 22,
+                  "marginTop": 16,
+                  "paddingVertical": 6,
+                }
+              }
+            >
+              ios
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignSelf": "center",
+                    "backgroundColor": "#ccc",
+                    "padding": 40,
+                  },
+                  Object {
+                    "shadowColor": "#333",
+                    "shadowOffset": Object {
+                      "height": 8,
+                      "width": 8,
+                    },
+                    "shadowOpacity": 1,
+                    "shadowRadius": 0,
+                  },
+                ]
+              }
+            >
+              <Text>
+                hello
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#333",
+        "width": "100%",
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      editable={false}
+      multiline={true}
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#666",
+          "borderRadius": 4,
+          "color": "#fffff9",
+          "fontSize": 16,
+          "height": 250,
+          "marginHorizontal": 10,
+          "marginTop": 10,
+          "padding": 5,
+          "textAlignVertical": "top",
+        }
+      }
+      testID="console-text"
+      underlineColorAndroid="transparent"
+      value="  componentShadow: {
+    shadowColor: \\"#333\\",
+    shadowOffset: { width: 8, height: 8 },
+    shadowOpacity: 1,
+    shadowRadius: 0,
+    elevation: 1,
+  },"
+    />
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "opacity": 1,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fffffe",
+            "fontSize": 18,
+            "paddingVertical": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        close
+      </Text>
+    </View>
+  </View>
+</View>
+`;

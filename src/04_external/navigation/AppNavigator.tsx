@@ -2,9 +2,19 @@ import React, { useRef, useCallback } from "react";
 import {
   NavigationContainer,
   NavigationContainerRef,
+  DefaultTheme,
 } from "@react-navigation/native";
 
 import { TabNavigator } from "./MainTabNavigator";
+
+const navigationTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    text: "#922",
+    card: "#fdd",
+  },
+};
 
 export const AppNavigator = () => {
   // https://reactnavigation.org/docs/screen-tracking
@@ -37,7 +47,8 @@ export const AppNavigator = () => {
     <NavigationContainer
       ref={navigationRef}
       independent={true}
-      onReady={onReady}>
+      onReady={onReady}
+      theme={navigationTheme}>
       <TabNavigator />
     </NavigationContainer>
   );
