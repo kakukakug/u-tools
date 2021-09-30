@@ -5,7 +5,7 @@
     "scheme": "ReactNative-u-tools",
     "privacy": "public",
     "platforms": ["web"],
-    "version": "2.0.4",
+    "version": "2.0.5",
     "orientation": "portrait",
     "icon": "./src/04_external/assets/images/icon.png",
     "splash": {
