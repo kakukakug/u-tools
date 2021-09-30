@@ -4,7 +4,7 @@ exports[`ShadowStyleScreen ShadowStyleScreenを描写 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#fffff9",
+      "backgroundColor": "#fffffe",
       "flex": 1,
     }
   }
@@ -470,7 +470,7 @@ Webでは再現できなかったので表示していません。
         Object {
           "backgroundColor": "#666",
           "borderRadius": 4,
-          "color": "#fffff9",
+          "color": "#fffffe",
           "fontSize": 16,
           "height": 250,
           "marginHorizontal": 10,

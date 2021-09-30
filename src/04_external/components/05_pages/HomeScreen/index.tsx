@@ -1,7 +1,13 @@
 import React from "react";
-import { Text, ScrollView, StyleSheet, View } from "react-native";
-import { Button } from "react-native-paper";
+import {
+  TouchableOpacity,
+  Text,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 import { Colors } from "../../../styles/Colors";
 
@@ -10,17 +16,42 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.background,
   },
-  contentContainer: {},
+  contentContainer: {
+    alignItems: "center",
+  },
   menuContainer: {
     marginTop: 15,
-    alignItems: "center",
   },
   linkButton: {
     margin: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: Colors.white,
+    borderColor: Colors.surface,
+    borderWidth: 4,
+    borderRadius: 10,
+    shadowColor: "#aaa",
+    shadowOffset: { width: 8, height: 8 },
+    shadowOpacity: 1,
+    shadowRadius: 0,
+    paddingHorizontal: 10,
+  },
+  buttonIconArea: {
+    margin: 10,
+  },
+  buttonIcon: {
+    color: Colors.secondary,
+  },
+  buttonTextArea: {
+    margin: 10,
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 24,
     color: Colors.text,
+  },
+  buttonDiscription: {
+    fontSize: 16,
+    color: Colors.icon,
   },
   title: { marginVertical: 10, alignSelf: "center" },
   titleText: { fontSize: 38, color: Colors.text },
@@ -29,15 +60,10 @@ const styles = StyleSheet.create({
 export const HomeScreen = () => {
   const navigation = useNavigation();
 
-  const goFlexPreview = () => {
-    navigation.navigate("FlexBox");
+  const goScreen = (screenName) => {
+    navigation.navigate(screenName);
   };
-  const goIcons = () => {
-    navigation.navigate("Icons");
-  };
-  const goShadowStyle = () => {
-    navigation.navigate("Shadow");
-  };
+
   return (
     <View style={styles.container}>
       <View style={styles.title}>
@@ -47,29 +73,64 @@ export const HomeScreen = () => {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.menuContainer}>
-          <Button
-            uppercase={false}
-            onPress={goIcons}
-            mode="outlined"
+          <TouchableOpacity
+            onPress={() => {
+              goScreen("Icons");
+            }}
             style={styles.linkButton}>
-            <Text style={styles.buttonText}>@expo/vector-icons Preview</Text>
-          </Button>
-          <Button
-            uppercase={false}
-            onPress={goShadowStyle}
-            mode="outlined"
+            <View style={styles.buttonIconArea}>
+              <MaterialIcons
+                name="insert-emoticon"
+                style={styles.buttonIcon}
+                size={30}
+              />
+            </View>
+            <View style={styles.buttonTextArea}>
+              <Text style={styles.buttonText}>@expo/vector-icons Preview</Text>
+              <Text style={styles.buttonDiscription}>
+                @expo/vector-icons 及び react-native-vector-icons で利用できる
+                icon を探せます。
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              goScreen("Shadow");
+            }}
             style={styles.linkButton}>
-            <Text style={styles.buttonText}>React Native Shadow Simulator</Text>
-          </Button>
-          <Button
-            uppercase={false}
-            onPress={goFlexPreview}
-            mode="outlined"
+            <View style={styles.buttonIconArea}>
+              <MaterialIcons
+                name="wb-shade"
+                style={styles.buttonIcon}
+                size={30}
+              />
+            </View>
+            <View style={styles.buttonTextArea}>
+              <Text style={styles.buttonText}>
+                React Native Shadow Simulator
+              </Text>
+              <Text style={styles.buttonDiscription}>
+                React Native の影に関する Style を試せます。
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              goScreen("FlexBox");
+            }}
             style={styles.linkButton}>
-            <Text style={styles.buttonText}>
-              React Native FlexBox Style Creator
-            </Text>
-          </Button>
+            <View style={styles.buttonIconArea}>
+              <Ionicons name="apps-sharp" style={styles.buttonIcon} size={30} />
+            </View>
+            <View style={styles.buttonTextArea}>
+              <Text style={styles.buttonText}>
+                React Native FlexBox Style Creator
+              </Text>
+              <Text style={styles.buttonDiscription}>
+                React Native の FlexBox に関する Style を試せます。
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>

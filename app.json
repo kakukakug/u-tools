@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "honmushi-u-tools",
-    "slug": "honmushi-u-tools",
-    "scheme": "honmushi-u-tools",
+    "name": "ReactNative-u-tools",
+    "slug": "ReactNative-u-tools",
+    "scheme": "ReactNative-u-tools",
     "privacy": "public",
     "platforms": ["web"],
     "version": "2.0.4",
