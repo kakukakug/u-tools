@@ -1,7 +1,7 @@
 const tintColor = "#2f95dc";
 
 export const Colors = {
-  background: "#fffffe",
+  background: "#f9f9f9",
   text: "#333",
   surface: "#ccc",
   icon: "#666",

@@ -20,18 +20,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   main: {
-    flex: 1,
     flexDirection: "row",
+    justifyContent: "center",
+
+    flexWrap: "wrap",
   },
   settingContainer: {
+    margin: 10,
     padding: 10,
-    width: 400,
     backgroundColor: Colors.surface,
   },
   previewContainer: {
-    padding: 10,
-    width: 400,
+    margin: 10,
+    paddingTop: 10,
+    paddingHorizontal: 100,
+    paddingBottom: 100,
     backgroundColor: Colors.white,
+    borderColor: Colors.surface,
+    borderWidth: 2,
   },
   subTitleText: {
     fontSize: 26,

@@ -28,6 +28,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+    borderWidth: 1,
+    borderColor: Colors.surface,
   },
   iconName: {
     fontSize: 14,

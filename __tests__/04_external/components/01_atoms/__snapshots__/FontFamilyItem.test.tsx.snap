@@ -13,7 +13,7 @@ exports[`FontFamilyItem FontFamilyItemを描写 active ではない場合 1`] = 
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "#ccc",
+      "backgroundColor": "#fffffe",
       "marginVertical": 4,
       "opacity": 1,
       "padding": 10,

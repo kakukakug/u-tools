@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { Colors } from "../../../styles/Colors";
 
 const styles = StyleSheet.create({
-  title: { marginVertical: 10 },
+  title: { marginVertical: 10, padding: 10 },
   titleText: { fontSize: 38, color: Colors.text },
 });
 
