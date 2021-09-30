@@ -6,8 +6,10 @@ import { createStyle } from "../../../../01_entity/models/flex_style";
 
 const styles = StyleSheet.create({
   parent: {
-    backgroundColor: Colors.surface,
+    backgroundColor: "#eee",
     padding: 10,
+    borderWidth: 1,
+    borderColor: Colors.icon,
     flex: 1,
   },
   children: {

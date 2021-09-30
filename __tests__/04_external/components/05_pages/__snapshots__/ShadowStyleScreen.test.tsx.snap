@@ -4,7 +4,7 @@ exports[`ShadowStyleScreen ShadowStyleScreenを描写 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#fffffe",
+      "backgroundColor": "#f9f9f9",
       "flex": 1,
     }
   }
@@ -27,6 +27,7 @@ exports[`ShadowStyleScreen ShadowStyleScreenを描写 1`] = `
         style={
           Object {
             "marginVertical": 10,
+            "padding": 10,
           }
         }
       >
@@ -44,8 +45,9 @@ exports[`ShadowStyleScreen ShadowStyleScreenを描写 1`] = `
       <View
         style={
           Object {
-            "flex": 1,
             "flexDirection": "row",
+            "flexWrap": "wrap",
+            "justifyContent": "center",
           }
         }
       >
@@ -53,8 +55,8 @@ exports[`ShadowStyleScreen ShadowStyleScreenを描写 1`] = `
           style={
             Object {
               "backgroundColor": "#ccc",
+              "margin": 10,
               "padding": 10,
-              "width": 400,
             }
           }
         >
@@ -394,8 +396,12 @@ Webでは再現できなかったので表示していません。
           style={
             Object {
               "backgroundColor": "#fffffe",
-              "padding": 10,
-              "width": 400,
+              "borderColor": "#ccc",
+              "borderWidth": 2,
+              "margin": 10,
+              "paddingBottom": 100,
+              "paddingHorizontal": 100,
+              "paddingTop": 10,
             }
           }
         >
@@ -470,7 +476,7 @@ Webでは再現できなかったので表示していません。
         Object {
           "backgroundColor": "#666",
           "borderRadius": 4,
-          "color": "#fffffe",
+          "color": "#f9f9f9",
           "fontSize": 16,
           "height": 250,
           "marginHorizontal": 10,

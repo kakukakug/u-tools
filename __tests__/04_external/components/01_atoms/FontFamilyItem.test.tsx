@@ -36,7 +36,7 @@ describe("FontFamilyItem", () => {
     );
 
     const touchable = component.getByTestId("fontFamilyItem");
-    expect(touchable).toHaveStyle({ backgroundColor: Colors.surface });
+    expect(touchable).toHaveStyle({ backgroundColor: Colors.white});
 
     expect(component.toJSON()).toMatchSnapshot();
   });

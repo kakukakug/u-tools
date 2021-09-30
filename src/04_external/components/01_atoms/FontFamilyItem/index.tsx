@@ -4,7 +4,7 @@ import { Colors } from "../../../styles/Colors";
 
 const styles = StyleSheet.create({
   familyButton: {
-    backgroundColor: Colors.surface,
+    backgroundColor: Colors.white,
     padding: 10,
     marginVertical: 4,
   },
@@ -30,7 +30,7 @@ export const FontFamilyItem = (props: OuterProps) => {
         styles.familyButton,
         name === selectFamily
           ? { backgroundColor: Colors.primary }
-          : { backgroundColor: Colors.surface },
+          : { backgroundColor: Colors.white },
       ]}
       testID={"fontFamilyItem"}>
       <Text style={styles.familyText}>{name}</Text>

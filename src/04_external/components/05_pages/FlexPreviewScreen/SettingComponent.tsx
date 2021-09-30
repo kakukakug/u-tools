@@ -6,14 +6,15 @@ import { Colors } from "../../../styles/Colors";
 
 const styles = StyleSheet.create({
   customerContainer: {
-    flex: 3,
     flexDirection: "row",
     alignItems: "flex-start",
   },
 
   parentCustomer: {
     flex: 1,
-    backgroundColor: Colors.surface,
+    backgroundColor: "#eee",
+    borderWidth: 1,
+    borderColor: Colors.icon,
     paddingHorizontal: 4,
     height: 300,
   },

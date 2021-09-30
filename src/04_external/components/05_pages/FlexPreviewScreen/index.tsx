@@ -25,12 +25,20 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
   },
   settingContainer: {
+    margin: 10,
+    backgroundColor: Colors.surface,
     padding: 10,
     width: 400,
   },
   previewContainer: {
+    margin: 10,
+    backgroundColor: Colors.white,
+    borderWidth: 2,
+    borderColor: Colors.surface,
     padding: 10,
     width: 400,
   },
@@ -39,6 +47,7 @@ const styles = StyleSheet.create({
     color: Colors.icon,
     textAlign: "center",
     paddingTop: 6,
+    paddingBottom: 16,
   },
 });
 

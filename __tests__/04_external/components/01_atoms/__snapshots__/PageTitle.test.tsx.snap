@@ -5,6 +5,7 @@ exports[`src/04_external/components/01_atoms/PageTitle IconItemを描写 1`] = `
   style={
     Object {
       "marginVertical": 10,
+      "padding": 10,
     }
   }
 >

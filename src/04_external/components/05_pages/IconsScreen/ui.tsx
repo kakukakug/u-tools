@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   sidebar: {
     padding: 20,
     borderWidth: 1,
-    borderColor: Colors.icon,
+    backgroundColor: Colors.surface,
   },
   selectIconSet: {},
   iconView: {
@@ -40,11 +40,12 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
   iconList: {
-    width: 800,
-    backgroundColor: Colors.surface,
+    backgroundColor: Colors.white,
+    borderWidth: 2,
+    borderColor: Colors.surface,
   },
   search: {
-    backgroundColor: Colors.surface,
+    backgroundColor: Colors.icon,
     marginBottom: 10,
     padding: 4,
     borderRadius: 4,
