@@ -18,7 +18,7 @@ exports[`Console Consoleを描写 1`] = `
       Object {
         "backgroundColor": "#666",
         "borderRadius": 4,
-        "color": "#fffff9",
+        "color": "#fffffe",
         "fontSize": 16,
         "height": 250,
         "marginHorizontal": 10,

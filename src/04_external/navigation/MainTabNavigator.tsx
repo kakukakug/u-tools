@@ -16,6 +16,8 @@ import AddressTransformScreen from "../components/05_pages/AddressTransformScree
 
 import { Colors } from "../styles/Colors";
 
+import { CustomDrawerComponent } from "./CustomDrawerComponent";
+
 const Drawer = createDrawerNavigator();
 
 const Stack = createStackNavigator();
@@ -25,7 +27,7 @@ function HomeDrawer() {
     title: "React Native U-tools",
   };
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator drawerContent={CustomDrawerComponent}>
       <Drawer.Screen
         name="ReactNativeHome"
         component={HomeScreen}
