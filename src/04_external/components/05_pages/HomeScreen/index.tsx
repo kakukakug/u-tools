@@ -19,9 +19,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: "center",
   },
-  menuContainer: {
-    marginTop: 15,
-  },
+  menuContainer: {},
   linkButton: {
     margin: 10,
     flexDirection: "row",
@@ -53,7 +51,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: Colors.icon,
   },
-  title: { marginVertical: 10, alignSelf: "center" },
+  title: { marginVertical: 20, alignSelf: "center" },
   titleText: { fontSize: 38, color: Colors.text },
 });
 

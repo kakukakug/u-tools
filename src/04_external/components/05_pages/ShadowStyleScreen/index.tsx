@@ -106,7 +106,7 @@ export const ShadowStyleScreen = () => {
         <PageTitle title="React Native Shadow Simulator" />
         <View style={styles.main}>
           <View style={styles.settingContainer}>
-            <Text style={styles.subTitleText}>setting</Text>
+            <Text style={styles.subTitleText}>Property selecter</Text>
             <View>
               <Text style={styles.osText}>ios</Text>
               <View style={styles.inputView}>
