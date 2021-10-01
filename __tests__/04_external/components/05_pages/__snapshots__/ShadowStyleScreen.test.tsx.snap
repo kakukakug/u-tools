@@ -70,7 +70,7 @@ exports[`ShadowStyleScreen ShadowStyleScreenを描写 1`] = `
               }
             }
           >
-            setting
+            Property selecter
           </Text>
           <View>
             <Text
