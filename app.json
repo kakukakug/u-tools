@@ -2,7 +2,7 @@
   "expo": {
     "name": "ReactNative-u-tools",
     "slug": "ReactNative-u-tools",
-    "scheme": "ReactNative-u-tools",
+    "scheme": "reactnative-u-tools",
     "privacy": "public",
     "platforms": ["web"],
     "version": "2.0.5",

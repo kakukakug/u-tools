@@ -3,6 +3,7 @@ import {
   NavigationContainer,
   NavigationContainerRef,
 } from "@react-navigation/native";
+import { createURL } from "expo-linking";
 
 import { TabNavigator } from "./MainTabNavigator";
 
@@ -15,6 +16,34 @@ export const AppNavigator = () => {
     //    setCurrentScreen("Home");
   }, []);
 
+  const prefix = createURL("/");
+
+  const linking = {
+    prefixes: [prefix],
+    config: {
+      screens: {
+        ReactNative: {
+          screens: {
+            ReactNativeDrawer: {
+              screens: {
+                ReactNativeHome: "",
+              },
+            },
+            Icons: "Icons",
+            FlexBox: "FlexBox",
+            Shadow: "Shadow",
+          },
+        },
+        Web: {
+          screens: {
+            WebHome: "WebHome",
+            SampleImage: "SampleImage",
+          },
+        },
+        NotFound: "*",
+      },
+    },
+  };
   /*
   if (__DEV__) {
     // console.log("debug mode on");
@@ -35,6 +64,7 @@ export const AppNavigator = () => {
 
   return (
     <NavigationContainer
+      linking={linking}
       ref={navigationRef}
       independent={true}
       onReady={onReady}>

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   View,
 } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
 
 export const HomeScreen = () => {
   const navigation = useNavigation();
+  console.log(navigation);
 
   const goScreen = (screenName) => {
     navigation.navigate(screenName);
