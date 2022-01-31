@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { TextInput, ScrollView, StyleSheet, Text, View } from "react-native";
-import Slider from "@react-native-community/slider";
+import { Slider } from "native-base";
 
-import { Colors } from "../../../styles/Colors";
+import { Colors } from "src/04_external/styles/Colors";
 
-import { Console } from "../../01_atoms/Console";
-import { PageTitle } from "../../01_atoms/PageTitle";
+import { Console } from "src/04_external/components/01_atoms/Console";
+import { PageTitle } from "src/04_external/components/01_atoms/PageTitle";
 
 const styles = StyleSheet.create({
   container: {
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   inputView: {
     backgroundColor: Colors.white,
     borderRadius: 4,
-    padding: 10,
+    padding: 14,
     margin: 4,
   },
   propertyName: {
@@ -77,9 +77,10 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   propertyValue: {
+    flex:1,
     fontSize: 16,
     color: Colors.icon,
-    marginLeft: 10,
+    marginLeft: 6,
   },
 });
 
@@ -127,24 +128,32 @@ export const ShadowStyleScreen = () => {
                     </Text>
                   </Text>
                   <Slider
-                    minimumValue={-50}
-                    maximumValue={50}
-                    minimumTrackTintColor={Colors.surface}
-                    maximumTrackTintColor={Colors.text}
-                    onValueChange={setShadowOffsetX}
+                    minValue={-50}
+                    maxValue={50}
+                    colorScheme="blue"
+                    size="md"
+                    onChange={setShadowOffsetX}
                     value={shadowOffsetX}
-                    step={1}
-                  />
+                    step={1}>
+                    <Slider.Track>
+                      <Slider.FilledTrack />
+                    </Slider.Track>
+                    <Slider.Thumb />
+                  </Slider>
                   <Text style={styles.propertyName}>shadowOffset-height</Text>
                   <Slider
-                    minimumValue={-50}
-                    maximumValue={50}
-                    minimumTrackTintColor={Colors.surface}
-                    maximumTrackTintColor={Colors.text}
-                    onValueChange={setShadowOffsetY}
+                    minValue={-50}
+                    maxValue={50}
+                    colorScheme="blue"
+                    size="md"
+                    onChange={setShadowOffsetY}
                     value={shadowOffsetY}
-                    step={1}
-                  />
+                    step={1}>
+                    <Slider.Track>
+                      <Slider.FilledTrack />
+                    </Slider.Track>
+                    <Slider.Thumb />
+                  </Slider>
                 </View>
               </View>
               <View>
@@ -154,14 +163,18 @@ export const ShadowStyleScreen = () => {
                     <Text style={styles.propertyValue}>{shadowOpacity}</Text>
                   </Text>
                   <Slider
-                    minimumValue={0}
-                    maximumValue={1}
-                    minimumTrackTintColor={Colors.surface}
-                    maximumTrackTintColor={Colors.text}
-                    onValueChange={setShadowOpacity}
+                    minValue={0}
+                    maxValue={1}
+                    colorScheme="blue"
+                    size="md"
+                    onChange={setShadowOpacity}
                     value={shadowOpacity}
-                    step={0.01}
-                  />
+                    step={0.01}>
+                    <Slider.Track>
+                      <Slider.FilledTrack />
+                    </Slider.Track>
+                    <Slider.Thumb />
+                  </Slider>
                 </View>
               </View>
               <View>
@@ -171,14 +184,18 @@ export const ShadowStyleScreen = () => {
                     <Text style={styles.propertyValue}>{shadowRadius}</Text>
                   </Text>
                   <Slider
-                    minimumValue={0}
-                    maximumValue={50}
-                    minimumTrackTintColor={Colors.surface}
-                    maximumTrackTintColor={Colors.text}
-                    onValueChange={setShadowRadius}
+                    minValue={0}
+                    maxValue={50}
+                    colorScheme="blue"
+                    size="md"
+                    onChange={setShadowRadius}
                     value={shadowRadius}
-                    step={1}
-                  />
+                    step={1}>
+                    <Slider.Track>
+                      <Slider.FilledTrack />
+                    </Slider.Track>
+                    <Slider.Thumb />
+                  </Slider>
                 </View>
               </View>
             </View>

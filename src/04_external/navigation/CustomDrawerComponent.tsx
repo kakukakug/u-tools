@@ -11,9 +11,9 @@ import {
 } from "react-native";
 import Constants from "expo-constants";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
-import appIcon from "../assets/images/icon.png";
 
-import { Colors } from "../styles/Colors";
+import appIcon from "src/04_external/assets/images/icon.png";
+import { Colors } from "src/04_external/styles/Colors";
 
 const styles = StyleSheet.create({
   safeArea: {

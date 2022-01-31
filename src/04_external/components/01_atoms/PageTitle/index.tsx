@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import { Colors } from "../../../styles/Colors";
+import { Colors } from "src/04_external/styles/Colors";
 
 const styles = StyleSheet.create({
   title: { marginVertical: 10, padding: 10 },

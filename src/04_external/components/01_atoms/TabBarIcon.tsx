@@ -1,7 +1,7 @@
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { Colors } from "../../styles/Colors";
+import { Colors } from "src/04_external/styles/Colors";
 
 type OuterProps = {
   name: string;

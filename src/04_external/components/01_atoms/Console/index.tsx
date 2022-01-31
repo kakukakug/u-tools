@@ -7,7 +7,7 @@ import {
   TextInput,
 } from "react-native";
 
-import { Colors } from "../../../styles/Colors";
+import { Colors } from "src/04_external/styles/Colors";
 
 const styles = StyleSheet.create({
   consoleContainer: {

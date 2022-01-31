@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
-import { Colors } from "../../../styles/Colors";
-import { Console } from "../../01_atoms/Console";
-import { PageTitle } from "../../01_atoms/PageTitle";
+import { Colors } from "src/04_external/styles/Colors";
+import { Console } from "src/04_external/components/01_atoms/Console";
+import { PageTitle } from "src/04_external/components/01_atoms/PageTitle";
 
-import { styleTextFormat } from "../../../../01_entity/models/flex_style";
+import { styleTextFormat } from "src/01_entity/models/flex_style";
 
 import { PreviewComponent } from "./PreviewComponent";
 import { SettingComponent } from "./SettingComponent";

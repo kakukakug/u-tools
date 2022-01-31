@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { StyleSheet, Text, View, TextInput, FlatList } from "react-native";
-import { Snackbar } from "react-native-paper";
+import { useToast } from "native-base";
 import * as Clipboard from "expo-clipboard";
 
-import { Colors } from "../../../styles/Colors";
-import { Console } from "../../01_atoms/Console";
-import { PageTitle } from "../../01_atoms/PageTitle";
-import { FontFamilyItem } from "../../01_atoms/FontFamilyItem";
-import { IconItem } from "../../01_atoms/IconItem";
+import { IconFamiliesName } from "src/01_entity/models/vector_icons";
 
-import { IconFamiliesName } from "../../../../01_entity/models/vector_icons";
+import { Colors } from "src/04_external/styles/Colors";
+import { Console } from "src/04_external/components/01_atoms/Console";
+import { PageTitle } from "src/04_external/components/01_atoms/PageTitle";
+import { FontFamilyItem } from "src/04_external/components/01_atoms/FontFamilyItem";
+import { IconItem } from "src/04_external/components/01_atoms/IconItem";
 
 const styles = StyleSheet.create({
   container: {
@@ -72,11 +72,11 @@ type OuterProps = {
 };
 
 export const IconsScreenUI = (props: OuterProps) => {
-  const [isVisible, setIsVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [selectIcon, setSelectIcon] = useState("");
   const [consoleText, setConsoleText] = useState("");
   const [family, setFamily] = useState("AntDesign");
+  const toast = useToast();
 
   const { icons, setVisibleIccons } = props;
 
@@ -104,10 +104,19 @@ export const IconsScreenUI = (props: OuterProps) => {
     [searchText, setVisibleIccons]
   );
 
+  const showToast = useCallback((iconName: string) => {
+    toast.show({
+      title: "copy icon name to clipbord",
+      description: iconName,
+      duration: 3000,
+      status: "info",
+    });
+  }, []);
+
   const onPressIcon = useCallback((prop) => {
     setSelectIcon(prop);
     Clipboard.setString(prop);
-    setIsVisible(true);
+    showToast(prop);
   }, []);
 
   const emptyComponent = () => {
@@ -165,19 +174,6 @@ export const IconsScreenUI = (props: OuterProps) => {
             />
           </View>
         </View>
-        <Snackbar
-          visible={isVisible}
-          onDismiss={() => {
-            setIsVisible(false);
-          }}
-          action={{
-            label: "OK",
-            onPress: () => {
-              setIsVisible(false);
-            },
-          }}>
-          copy icon name to clipbord
-        </Snackbar>
       </View>
       <Console consoleText={consoleText} />
     </View>

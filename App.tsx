@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
+import { NativeBaseProvider } from "native-base";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { AppNavigator } from "./src/04_external/navigation/AppNavigator";
-import { Colors } from "./src/04_external/styles/Colors";
-
-const theme = {
-  ...DefaultTheme,
-};
+import { AppNavigator } from "src/04_external/navigation/AppNavigator";
+import { Colors } from "src/04_external/styles/Colors";
 
 const styles = StyleSheet.create({
   container: {
@@ -35,12 +31,12 @@ export default function App(props) {
     );
   } else {
     return (
-      <PaperProvider theme={theme}>
-        <View style={styles.container}>
-          {Platform.OS === "ios" && <StatusBar barStyle="default" />}
-          <AppNavigator />
-        </View>
-      </PaperProvider>
+        <NativeBaseProvider>
+          <View style={styles.container}>
+            {Platform.OS === "ios" && <StatusBar barStyle="default" />}
+            <AppNavigator />
+          </View>
+        </NativeBaseProvider>
     );
   }
 }

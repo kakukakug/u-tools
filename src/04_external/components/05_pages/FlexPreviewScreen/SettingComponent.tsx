@@ -1,30 +1,25 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Picker } from "@react-native-picker/picker";
+import { Select } from "native-base";
 
-import { Colors } from "../../../styles/Colors";
+import { Colors } from "src/04_external/styles/Colors";
 
 const styles = StyleSheet.create({
   customerContainer: {
-    flexDirection: "row",
-    alignItems: "flex-start",
+    flex: 1,
   },
 
   parentCustomer: {
-    flex: 1,
-    backgroundColor: "#eee",
+    backgroundColor: "#f8f8ff",
     borderWidth: 1,
     borderColor: Colors.icon,
-    paddingHorizontal: 4,
-    height: 300,
+    padding: 4,
   },
   childCustomer: {
-    flex: 1,
     backgroundColor: Colors.white,
-    paddingHorizontal: 4,
+    padding: 4,
     borderWidth: 1,
     borderColor: Colors.icon,
-    height: 300,
   },
 
   child2: {
@@ -54,15 +49,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-end",
     alignItems: "center",
-    paddingHorizontal: 4,
+    padding: 4,
   },
 
-  picker: {
-    height: 20,
-    width: 60,
-    borderRadius: 4,
-  },
-  pickerItem: {},
 });
 
 type PickerProps = {
@@ -76,18 +65,26 @@ const SettingPicker = (data: PickerProps) => {
   return (
     <View style={styles.flexRow}>
       <Text style={styles.stylePropText}>{name}</Text>
-      <Picker
+      <Select
         selectedValue={value}
-        style={styles.picker}
-        itemStyle={styles.pickerItem}
+        variant="filled"
+        placeholder="choose props"
         testID={name}
         onValueChange={(itemValue) => {
           onValueChange(itemValue);
         }}>
         {selectionArray.map((label, index) => {
-          return <Picker.Item label={label} value={label} key={index} />;
+          return (
+            <Select.Item
+              colorScheme={"trueGray"}
+              variant="filled"
+              label={label}
+              value={label}
+              key={index}
+            />
+          );
         })}
-      </Picker>
+      </Select>
     </View>
   );
 };
