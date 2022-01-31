@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, ScrollView, StyleSheet, View } from "react-native";
-import { Button } from "react-native-paper";
+import { Button } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 
 import { Colors } from "../../../styles/Colors";
@@ -41,11 +41,7 @@ export const WebScreen = () => {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.menuContainer}>
-          <Button
-            uppercase={false}
-            onPress={goSampleImage}
-            mode="outlined"
-            style={styles.linkButton}>
+          <Button onPress={goSampleImage} colorScheme="blue" variant="outline">
             <Text style={styles.buttonText}>サンプル画像素材置き場</Text>
           </Button>
         </View>

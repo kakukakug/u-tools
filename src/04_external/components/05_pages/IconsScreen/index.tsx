@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-import { iconSearch } from "../../../../01_entity/models/vector_icons";
+import { iconSearch } from "src/01_entity/models/vector_icons";
 
 import { IconsScreenUI } from "./ui";
 

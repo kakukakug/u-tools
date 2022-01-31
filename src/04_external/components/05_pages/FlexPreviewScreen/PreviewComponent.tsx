@@ -1,12 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import { Colors } from "../../../styles/Colors";
-import { createStyle } from "../../../../01_entity/models/flex_style";
+import { createStyle } from "src/01_entity/models/flex_style";
+import { Colors } from "src/04_external/styles/Colors";
 
 const styles = StyleSheet.create({
   parent: {
-    backgroundColor: "#eee",
+    backgroundColor: "#f8f8ff",
     padding: 10,
     borderWidth: 1,
     borderColor: Colors.icon,

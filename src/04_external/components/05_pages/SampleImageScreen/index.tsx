@@ -7,15 +7,15 @@ import {
   StyleSheet,
   View,
 } from "react-native";
-import { Button } from "react-native-paper";
+import { Button } from "native-base";
 
-import { Colors } from "../../../styles/Colors";
-import { PageTitle } from "../../01_atoms/PageTitle";
-import jpeg300 from "../../../assets/images/jpg-300-300.jpg";
-import jpeg1000 from "../../../assets/images/jpeg-1000.jpg";
-import jpeg1500 from "../../../assets/images/jpeg-1500.jpg";
-import png300 from "../../../assets/images/png-300-300.png";
-import svg300 from "../../../assets/images/svg-300.svg";
+import { PageTitle } from "src/04_external/components/01_atoms/PageTitle";
+import jpeg300 from "src/04_external/assets/images/jpg-300-300.jpg";
+import jpeg1000 from "src/04_external/assets/images/jpeg-1000.jpg";
+import jpeg1500 from "src/04_external/assets/images/jpeg-1500.jpg";
+import png300 from "src/04_external/assets/images/png-300-300.png";
+import svg300 from "src/04_external/assets/images/svg-300.svg";
+import { Colors } from "src/04_external/styles/Colors";
 
 const styles = StyleSheet.create({
   container: {
@@ -87,8 +87,8 @@ export const SampleImageScreen = () => {
             <Text style={styles.imageText}>svg 300</Text>
           </View>
           <View style={styles.imageContainer}>
-            <Button uppercase={false} mode="text" onPress={onPressGif}>
-              gif 画像は wikipedia へのリンク
+            <Button variant="outline" colorScheme="blue" onPress={onPressGif}>
+              <Text>gif 画像は wikipedia へのリンク</Text>
             </Button>
           </View>
         </ScrollView>

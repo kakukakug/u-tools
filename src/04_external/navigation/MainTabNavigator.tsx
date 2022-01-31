@@ -3,18 +3,18 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import { TabBarIcon } from "../components/01_atoms/TabBarIcon";
-import { HomeScreen } from "../components/05_pages/HomeScreen";
-import { IconsScreen } from "../components/05_pages/IconsScreen";
-import { ShadowStyleScreen } from "../components/05_pages/ShadowStyleScreen";
-import { FlexPreviewScreen } from "../components/05_pages/FlexPreviewScreen";
-import { WebScreen } from "../components/05_pages/WebScreen";
-import { SampleImageScreen } from "../components/05_pages/SampleImageScreen";
-import DatetimeTransformScreen from "../components/05_pages/DatetimeTransformScreen";
-import CompanyNameTransformScreen from "../components/05_pages/CompanyNameTransformScreen";
-import AddressTransformScreen from "../components/05_pages/AddressTransformScreen";
+import { TabBarIcon } from "src/04_external/components/01_atoms/TabBarIcon";
+import { HomeScreen } from "src/04_external/components/05_pages/HomeScreen";
+import { IconsScreen } from "src/04_external/components/05_pages/IconsScreen";
+import { ShadowStyleScreen } from "src/04_external/components/05_pages/ShadowStyleScreen";
+import { FlexPreviewScreen } from "src/04_external/components/05_pages/FlexPreviewScreen";
+import { WebScreen } from "src/04_external/components/05_pages/WebScreen";
+import { SampleImageScreen } from "src/04_external/components/05_pages/SampleImageScreen";
+import DatetimeTransformScreen from "src/04_external/components/05_pages/DatetimeTransformScreen";
+import CompanyNameTransformScreen from "src/04_external/components/05_pages/CompanyNameTransformScreen";
+import AddressTransformScreen from "src/04_external/components/05_pages/AddressTransformScreen";
 
-import { Colors } from "../styles/Colors";
+import { Colors } from "src/04_external/styles/Colors";
 
 import { CustomDrawerComponent } from "./CustomDrawerComponent";
 

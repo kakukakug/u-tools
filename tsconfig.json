@@ -3,6 +3,11 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["esnext"],
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["./src/*"],
+      "external/*": ["./src/04_external/*"]
+    },
     "jsx": "react-native",
     "noEmit": true,
     "moduleResolution": "node",
