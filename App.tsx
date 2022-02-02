@@ -31,12 +31,12 @@ export default function App(props) {
     );
   } else {
     return (
-        <NativeBaseProvider>
-          <View style={styles.container}>
-            {Platform.OS === "ios" && <StatusBar barStyle="default" />}
-            <AppNavigator />
-          </View>
-        </NativeBaseProvider>
+      <NativeBaseProvider>
+        <View style={styles.container}>
+          {Platform.OS === "ios" && <StatusBar barStyle="default" />}
+          <AppNavigator />
+        </View>
+      </NativeBaseProvider>
     );
   }
 }

@@ -104,20 +104,26 @@ export const IconsScreenUI = (props: OuterProps) => {
     [searchText, setVisibleIccons]
   );
 
-  const showToast = useCallback((iconName: string) => {
-    toast.show({
-      title: "copy icon name to clipbord",
-      description: iconName,
-      duration: 3000,
-      status: "info",
-    });
-  }, []);
+  const showToast = useCallback(
+    (iconName: string) => {
+      toast.show({
+        title: "copy icon name to clipbord",
+        description: iconName,
+        duration: 3000,
+        status: "info",
+      });
+    },
+    [toast]
+  );
 
-  const onPressIcon = useCallback((prop) => {
-    setSelectIcon(prop);
-    Clipboard.setString(prop);
-    showToast(prop);
-  }, []);
+  const onPressIcon = useCallback(
+    (prop) => {
+      setSelectIcon(prop);
+      Clipboard.setString(prop);
+      showToast(prop);
+    },
+    [showToast]
+  );
 
   const emptyComponent = () => {
     return (
