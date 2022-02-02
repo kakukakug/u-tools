@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   propertyValue: {
-    flex:1,
+    flex: 1,
     fontSize: 16,
     color: Colors.icon,
     marginLeft: 6,

@@ -15,9 +15,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
     alignItems: "center",
   },
-  linkButton: {
-    margin: 10,
-  },
   buttonText: {
     fontSize: 20,
     color: Colors.text,

@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react-native";
+import { render } from "test-utils";
 
 import { PreviewComponent } from "../../../../src/04_external/components/05_pages/FlexPreviewScreen/PreviewComponent";
 import { SettingComponent } from "../../../../src/04_external/components/05_pages/FlexPreviewScreen/SettingComponent";

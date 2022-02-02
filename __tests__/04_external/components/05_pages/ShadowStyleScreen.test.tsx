@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react-native";
+import { render } from "test-utils";
 
 import { ShadowStyleScreen } from "../../../../src/04_external/components/05_pages/ShadowStyleScreen";
 

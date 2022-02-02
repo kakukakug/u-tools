@@ -16,12 +16,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuContainer: {},
-  buttonIconArea: {
-    margin: 10,
-  },
-  buttonIcon: {
-    color: Colors.secondary,
-  },
   buttonTextArea: {
     margin: 10,
   },
