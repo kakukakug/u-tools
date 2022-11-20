@@ -45,7 +45,7 @@
     "@testing-library/jest-native": "4.0.2",
     "@testing-library/react-native": "7.2.0",
     "@types/jest": "27.0.2",
-    "@types/react": "17.0.38",
+    "@types/react": "17.0.52",
     "@types/react-native": "0.64.23",
     "@typescript-eslint/eslint-plugin": "5.10.2",
     "@typescript-eslint/parser": "5.10.2",
